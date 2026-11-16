@@ -84,9 +84,10 @@ python -m http.server 8080
 
 - 行省切换 / 层级筛选 / 关键词搜索（支持中文、德文、英文，如「面包」「Bäckerei」「bread」）
 - 三种情景一键切换，表格同时给出「无加成」与「当前情景」两列，并标注变化百分比
+- **专家 / 物品卡自选**：表格每行「＋卡」打开弹层，列出该建筑可用的全部卡（115 张、222 栋建筑各有清单），勾选最多 3 张后生产力与配比实时重算；可选普通 / 传说品质档
 - 商品与建筑全部带图标：卡片头部是成品图标，流程条上每件商品带图标，表格与配方明细里每栋建筑带图标
 - 成品建筑数量基准（1 / 2 / 5 / 10 / 20 座）
-- 额外全局加成滑块（模拟宗教、专家、临时增益）
+- 额外全局加成滑块（模拟宗教、临时增益）
 - 每张卡片可展开「逐栋配方与加成明细」
 - URL 参数可分享具体查询：`?region=latium&q=面包&mode=tech&n=10&bonus=50`
 
@@ -112,6 +113,7 @@ data.js             数据集（构建产物，window.ANNO_DATA）
 data/data.json      同一份数据的 JSON 版本，便于二次开发
 img/goods/          143 张商品图标（WebP，128px）
 img/buildings/      240 张建筑图标（WebP，160px）
+img/cards/          115 张专家 / 物品卡图标（WebP，96px）
 docs/               配比手册（Markdown，979 行）+ 预览图
 tools/              数据管线脚本（抓取 → 解析 → 构建 → 生成文档）
 ```
@@ -127,6 +129,7 @@ tools/              数据管线脚本（抓取 → 解析 → 构建 → 生成
 | 基础加工周期、设施可用性、研究 / 宗教加成 | [vitablo Anno 117 Warenrechner](https://db.vitablo.de/en/guide/anno-117-warenrechner/)（补丁 3.0） |
 | 配方输入 / 输出（每栋建筑消耗与产出什么） | 同站建筑数据库 `anno-117-buildings` |
 | 商品 / 建筑图标 | 同站 `wp-content/uploads`（a117-ware-* / a117-bauwerk-*），已压缩为本地 WebP |
+| 专家 / 物品卡清单与普通 / 传说加成 | vitablo 计算器内嵌专家弹窗数据（data-card / data-base / data-prod / rarity） |
 | 交叉校验 | [anno117.tools](https://anno117.tools/)、GamesRadar / Prima 配比表 |
 
 **已校验的经典配比**（与多方攻略一致）：
@@ -151,6 +154,8 @@ tools/parse.py             解析计算器页面 → 链结构、基础周期、
 tools/parse2.py            解析复式视图 → 每栋建筑的研究 / 宗教 / 专家上限
 tools/extract_images.py    从计算器页面提取每条产线的商品图与逐栋建筑图
 tools/fetch_images.py      下载并压缩图标到 img/（WebP，并发 + 重试）
+tools/parse_cards.py       解析每栋建筑可用的专家 / 物品卡（115 张）
+tools/cards_zh.py          卡牌中文名对照表
 tools/build_data.py        合并、翻译、注入图标、生成 data/data.json
 tools/gen_docs.py          生成 docs/ 配比手册
 ```

@@ -10441,5 +10441,2381 @@
   "Wine": "img/goods/wein.webp",
   "Wood": "img/goods/holz.webp",
   "Writing Tables": "img/goods/schrifttafeln.webp"
+ },
+ "cards": {
+  "2397": {
+   "zh": "马克罗比乌斯·米努基亚努斯，微观世界学者",
+   "de": "Macrobius Minucianus, Mikrokosmologe",
+   "base": 20.0,
+   "prod": 35.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-macrobius-minucianus-mikrokosmologe.webp"
+  },
+  "2494": {
+   "zh": "斯凯尔格，隐修还原论者",
+   "de": "Sceilg, eremitischer Reduktionist",
+   "base": 30.0,
+   "prod": 40.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-sceilg-eremitischer-reduktionist.webp"
+  },
+  "2134": {
+   "zh": "女车轴匠",
+   "de": "Achsmacherin",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-achsmacherin.webp"
+  },
+  "2561": {
+   "zh": "有德志愿者",
+   "de": "Tugendhafter Freiwilliger",
+   "base": 15.0,
+   "prod": 15.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-tugendhafter-freiwilliger.webp"
+  },
+  "2375": {
+   "zh": "莱维努斯，武尔坎努斯之镐",
+   "de": "Laevinus, Dolabra des Vulcanus",
+   "base": 100.0,
+   "prod": 150.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-laevinus-dolabra-des-vulcanus.webp"
+  },
+  "2444": {
+   "zh": "奥菲莉亚，青铜幽冥之声",
+   "de": "Orphelia, Stimme der ehernen Finsternis",
+   "base": 50.0,
+   "prod": 70.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-orphelia-stimme-der-ehernen-finsternis.webp"
+  },
+  "2344": {
+   "zh": "女商人",
+   "de": "Händlerin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-haendlerin.webp"
+  },
+  "6482": {
+   "zh": "陶斯瑞特，灼眼",
+   "de": "Tausret mit dem flammenden Auge",
+   "base": 35.0,
+   "prod": 50.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-tausret-mit-dem-flammenden-auge.webp"
+  },
+  "2557": {
+   "zh": "精准陶匠",
+   "de": "Treffende Töpferin",
+   "base": 5.0,
+   "prod": 5.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-treffende-toepferin.webp"
+  },
+  "6434": {
+   "zh": "伊西多拉，卡拉西里斯裁缝",
+   "de": "Isidora, Kalasiris-Schneiderin",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-isidora-kalasiris-schneiderin.webp"
+  },
+  "2519": {
+   "zh": "塞尔维亚·贝利亚，海岸百合",
+   "de": "Servia Bellia, Lilie der Küste",
+   "base": 25.0,
+   "prod": 25.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-servia-bellia-lilie-der-kueste.webp"
+  },
+  "2373": {
+   "zh": "工艺熔炼专家",
+   "de": "Kunsthandwerklicher Schmelzprofi",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-kunsthandwerklicher-schmelzprofi.webp"
+  },
+  "6531": {
+   "zh": "被劫掠的废墟",
+   "de": "Geplünderte Ruinen",
+   "base": 25.0,
+   "prod": 25.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-gepluenderte-ruinen.webp"
+  },
+  "6520": {
+   "zh": "地下陶罐",
+   "de": "Unterirdische Pithoi",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-unterirdische-pithoi.webp"
+  },
+  "2189": {
+   "zh": "随行雕刻师",
+   "de": "Begleitender Graveur",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-begleitender-graveur.webp"
+  },
+  "2374": {
+   "zh": "近视石匠",
+   "de": "Kurzsichtiger Steinschläger",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-kurzsichtiger-steinschlaeger.webp"
+  },
+  "2236": {
+   "zh": "深掘淘金者",
+   "de": "Der tiefschürfende Goldsucher",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-der-tiefschuerfende-goldsucher.webp"
+  },
+  "2479": {
+   "zh": "普伊尔·法布·马纳维丹，里安农的驿使",
+   "de": "Pwyll fab Manawydan, Rhiannons Postillon",
+   "base": 30.0,
+   "prod": 35.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-pwyll-fab-manawydan-rhiannons-postillon.webp"
+  },
+  "6420": {
+   "zh": "小西庇阿·阿非利加努斯，独立将领",
+   "de": "Scorpio Africanus Minor, unabhängiger General",
+   "base": 50.0,
+   "prod": 100.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-scorpio-africanus-minor-unabhaengiger-general.webp"
+  },
+  "2604": {
+   "zh": "埃俄利亚定调师",
+   "de": "Äolischer Tonangeber",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-aeolischer-tonangeber.webp"
+  },
+  "2235": {
+   "zh": "分叉者",
+   "de": "Der Bifurcator",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-der-bifurcator.webp"
+  },
+  "2403": {
+   "zh": "斗篷专家",
+   "de": "Mantelprofi",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-mantelprofi.webp"
+  },
+  "2342": {
+   "zh": "制帽匠",
+   "de": "Hutmacher",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-hutmacher.webp"
+  },
+  "2512": {
+   "zh": "帆工",
+   "de": "Segler",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-segler.webp"
+  },
+  "6517": {
+   "zh": "卡什塔尼亚铁",
+   "de": "Kashtanisches Eisen",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-kashtanisches-eisen.webp"
+  },
+  "6480": {
+   "zh": "胡伊，与丰收对话者",
+   "de": "Huy, Die zur Ernte spricht",
+   "base": 35.0,
+   "prod": 50.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-huy-die-zur-ernte-spricht.webp"
+  },
+  "2215": {
+   "zh": "卡斯波尼亚·卡斯塔，刻瑞斯女祭司",
+   "de": "Casponia Casta, Sacerdos Cereris",
+   "base": 25.0,
+   "prod": 35.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-casponia-casta-sacerdos-cereris.webp"
+  },
+  "2252": {
+   "zh": "驯象师",
+   "de": "Elefantenbändiger",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-elefantenbaendiger.webp"
+  },
+  "2513": {
+   "zh": "女搓绳工",
+   "de": "Seilzwirnerin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-seilzwirnerin.webp"
+  },
+  "2538": {
+   "zh": "驮夫",
+   "de": "Säumer",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-saeumer.webp"
+  },
+  "2421": {
+   "zh": "米纳斯·奥尔拉夫，黄金传奇",
+   "de": "Minas Órlámh, die goldene Legende",
+   "base": 25.0,
+   "prod": 35.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-minas-orlamh-die-goldene-legende.webp"
+  },
+  "2376": {
+   "zh": "拉科尼亚女剑匠",
+   "de": "Lakonische Schwertschmiedin",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-lakonische-schwertschmiedin.webp"
+  },
+  "2377": {
+   "zh": "甲片军备长",
+   "de": "Lamellen-Rüstmeister",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-lamellen-ruestmeister.webp"
+  },
+  "3644": {
+   "zh": "山腹深处",
+   "de": "Die Tiefen des Berges",
+   "base": 5.0,
+   "prod": 5.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-die-tiefen-des-berges.webp"
+  },
+  "2159": {
+   "zh": "阿内林·高德里斯，锻冶领主",
+   "de": "Aneirin Gwawdrydd, Schmied-Lord",
+   "base": 25.0,
+   "prod": 35.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-aneirin-gwawdrydd-schmied-lord.webp"
+  },
+  "2274": {
+   "zh": "法维卢斯，竞技场凉鞋英雄",
+   "de": "Favillus, Arenawelt- und Sandalenheld",
+   "base": 35.0,
+   "prod": 45.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-favillus-arenawelt-und-sandalenheld.webp"
+  },
+  "2196": {
+   "zh": "博里奥拉努斯，围城淬勇",
+   "de": "Boriolanus mit dem belagerungsgestählten Mut",
+   "base": 45.0,
+   "prod": 60.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-boriolanus-mit-dem-belagerungsgestaehlten-mut.webp"
+  },
+  "2183": {
+   "zh": "奥恩，马尔斯·卢凯提乌斯传教者",
+   "de": "Aun, Proselyt von Mars Loucetius",
+   "base": 10.0,
+   "prod": 20.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-aun-proselyt-von-mars-loucetius.webp"
+  },
+  "2601": {
+   "zh": "佐尔西内斯，萨尔马提亚铸剑师",
+   "de": "Zorsines, sarmatischer Schwertformer",
+   "base": 30.0,
+   "prod": 40.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-zorsines-sarmatischer-schwertformer.webp"
+  },
+  "6431": {
+   "zh": "镰剑刃匠",
+   "de": "Khopeshklingenschmied",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-khopeshklingenschmied.webp"
+  },
+  "2340": {
+   "zh": "霍斯塔·乌尔皮乌斯，音律抹除者",
+   "de": "Hosta Vulpius, Tilger der Töne",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-hosta-vulpius-tilger-der-toene.webp"
+  },
+  "2507": {
+   "zh": "猪语者",
+   "de": "Schweineflüsterer",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-schweinefluesterer.webp"
+  },
+  "2592": {
+   "zh": "白鞣女工",
+   "de": "Weißgerberin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-weissgerberin.webp"
+  },
+  "2606": {
+   "zh": "蚀刻煮工",
+   "de": "Ätzende Siederin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-aetzende-siederin.webp"
+  },
+  "2283": {
+   "zh": "鱼类讲师",
+   "de": "Fischdozentin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-fischdozentin.webp"
+  },
+  "2280": {
+   "zh": "芬内切斯·马克·埃尔克马尔，全知鲑渔",
+   "de": "Finneces Mac Elcmar, allwissender Lachsfischer",
+   "base": 50.0,
+   "prod": 60.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-finneces-mac-elcmar-allwissender-lachsfischer.webp"
+  },
+  "2530": {
+   "zh": "斯佩尔·尼克·雷阿尔塔，善钓之才",
+   "de": "Spéir Níc Réalta, Angeltalent mit List",
+   "base": 30.0,
+   "prod": 30.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-speir-nic-realta-angeltalent-mit-list.webp"
+  },
+  "2434": {
+   "zh": "网钓者",
+   "de": "Netzangler",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-netzangler.webp"
+  },
+  "2318": {
+   "zh": "燕麦切碎工",
+   "de": "Haferhacker",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-haferhacker.webp"
+  },
+  "2167": {
+   "zh": "阿皮翁·莫克托斯·阿皮基乌斯，无尽胃口",
+   "de": "Apion Mochthos Apicius, mit Apeiron-Appetit",
+   "base": 25.0,
+   "prod": 25.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-apion-mochthos-apicius-mit-apeiron-appetit.webp"
+  },
+  "2549": {
+   "zh": "蒂兰娜，羊毛染色彩绘师",
+   "de": "Tiranna, in der Wolle gefärbte Polychromistin",
+   "base": 35.0,
+   "prod": 50.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-tiranna-in-der-wolle-gefaerbte-polychromistin.webp"
+  },
+  "6422": {
+   "zh": "赶鹅女",
+   "de": "Gänsetreiberin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-gaensetreiberin.webp"
+  },
+  "6425": {
+   "zh": "卡伊克面包师",
+   "de": "Kaykbäckerin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-kaykbaeckerin.webp"
+  },
+  "2543": {
+   "zh": "面团占卜师",
+   "de": "Teigwahrsager",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-teigwahrsager.webp"
+  },
+  "2195": {
+   "zh": "玻厄提亚，世界轴心磨石",
+   "de": "Boethia, Mühlstein der Axis Mundi",
+   "base": 100.0,
+   "prod": 100.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-boethia-muehlstein-der-axis-mundi.webp"
+  },
+  "2200": {
+   "zh": "布劳达修士，面包鉴赏家",
+   "de": "Bruder Brauda, Brot-Bravurist",
+   "base": 25.0,
+   "prod": 35.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-bruder-brauda-brot-bravurist.webp"
+  },
+  "2217": {
+   "zh": "卡廷，格言药剂师",
+   "de": "Cattín, apothegmatische Apothekerin",
+   "base": 25.0,
+   "prod": 35.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-cattin-apothegmatische-apothekerin.webp"
+  },
+  "2433": {
+   "zh": "和善博物学家",
+   "de": "Nette Naturalistin",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-nette-naturalistin.webp"
+  },
+  "2329": {
+   "zh": "杰出发艺师",
+   "de": "Hervorragender Haarkünstler",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-hervorragender-haarkuenstler.webp"
+  },
+  "2357": {
+   "zh": "冷榨工",
+   "de": "Kaltpresser",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-kaltpresser.webp"
+  },
+  "2597": {
+   "zh": "色诺（菲利波波利斯），骑兵长官",
+   "de": "Xeno von Phillipopolis, Hipparchon",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-xeno-von-phillipopolis-hipparchon.webp"
+  },
+  "2531": {
+   "zh": "马厩少年",
+   "de": "Stalljunge",
+   "base": 15.0,
+   "prod": 15.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-stalljunge.webp"
+  },
+  "2556": {
+   "zh": "女踩葡萄工",
+   "de": "Traubenstampferin",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-traubenstampferin.webp"
+  },
+  "2202": {
+   "zh": "会计",
+   "de": "Buchhalter",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-buchhalter.webp"
+  },
+  "2412": {
+   "zh": "蜜匠",
+   "de": "Mellarius",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-mellarius.webp"
+  },
+  "3655": {
+   "zh": "蜜甜的飞行",
+   "de": "Honigsüßer Flug",
+   "base": 25.0,
+   "prod": 25.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-honigsuesser-flug.webp"
+  },
+  "2298": {
+   "zh": "盖乌斯·克里托尼乌斯·利格内乌斯，雄黄专家",
+   "de": "Gaius Critonius Ligneus, Sandarakspezialist",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-gaius-critonius-ligneus-sandarakspezialist.webp"
+  },
+  "2408": {
+   "zh": "马克西玛·科提乌斯，华贵坐垫匠",
+   "de": "Maxima Cottius, Herstellerin von Prunkpolstern",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-maxima-cottius-herstellerin-von-prunkpolstern.webp"
+  },
+  "2392": {
+   "zh": "无体系游戏学者",
+   "de": "Ludologin ohne System",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-ludologin-ohne-system.webp"
+  },
+  "2472": {
+   "zh": "普罗克勒斯，异邦神像匠",
+   "de": "Prokles, xenischer Xoanonist",
+   "base": 35.0,
+   "prod": 50.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-prokles-xenischer-xoanonist.webp"
+  },
+  "2469": {
+   "zh": "斑岩亲王",
+   "de": "Princeps von Porphyr",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-princeps-von-porphyr.webp"
+  },
+  "6432": {
+   "zh": "申提裁缝",
+   "de": "Schentischneiderin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-schentischneiderin.webp"
+  },
+  "2265": {
+   "zh": "欧律法厄萨，水晶澄明信徒",
+   "de": "Euryphaessa, Anhängerin der kristallinen Klarheit",
+   "base": 150.0,
+   "prod": 150.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-euryphaessa-anhaengerin-der-kristallinen-klarheit.webp"
+  },
+  "2535": {
+   "zh": "海洋学徒",
+   "de": "Student der Meere",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-student-der-meere.webp"
+  },
+  "2233": {
+   "zh": "库特勒拉，罗马最快之刃",
+   "de": "Cutlera, die schnellste Klinge Roms",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-cutlera-die-schnellste-klinge-roms.webp"
+  },
+  "2180": {
+   "zh": "奥卢斯·奥里乌斯·奥雷乌斯，金鸟",
+   "de": "Aulus Aurius Aureus, Goldvogel",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-aulus-aurius-aureus-goldvogel.webp"
+  },
+  "2222": {
+   "zh": "基亚拉·托盖尔，深渊赐福石匠",
+   "de": "Ciara Tógáil, die vom Abgrund gesegnete Steinmetzin",
+   "base": 15.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-ciara-togail-die-vom-abgrund-gesegnete-steinmetzin.webp"
+  },
+  "6442": {
+   "zh": "伊塞特·赫姆特内杰尔，伊西斯崇奉者",
+   "de": "Iset Hmt-ntr, Verehrerin der Isis",
+   "base": 50.0,
+   "prod": 100.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-iset-hmt-ntr-verehrerin-der-isis.webp"
+  },
+  "2287": {
+   "zh": "女编织工",
+   "de": "Flechterin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-flechterin.webp"
+  },
+  "6466": {
+   "zh": "芦苇割取女工",
+   "de": "Schilfschneiderin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-schilfschneiderin.webp"
+  },
+  "6433": {
+   "zh": "抄写员",
+   "de": "Scriptorin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-scriptorin.webp"
+  },
+  "6435": {
+   "zh": "制砖工",
+   "de": "Ziegelmacher",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-ziegelmacher.webp"
+  },
+  "2237": {
+   "zh": "迪亚拉·托盖尔，雕像般石匠",
+   "de": "Diara Tógáil, statuenhafte Steinmetzin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-diara-togail-statuenhafte-steinmetzin.webp"
+  },
+  "2501": {
+   "zh": "泥浆搜寻女工",
+   "de": "Schlammsucherin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-schlammsucherin.webp"
+  },
+  "2425": {
+   "zh": "采贝女",
+   "de": "Muschelsammlerin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-muschelsammlerin.webp"
+  },
+  "2410": {
+   "zh": "乳清大师",
+   "de": "Meisterin der Molke",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-meisterin-der-molke.webp"
+  },
+  "2474": {
+   "zh": "原牛长官",
+   "de": "Präfekt von Auerochsen",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-praefekt-von-auerochsen.webp"
+  },
+  "2316": {
+   "zh": "金酿南娜",
+   "de": "Goldbräu-Nanna",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-goldbraeu-nanna.webp"
+  },
+  "2288": {
+   "zh": "勤勉后裔",
+   "de": "Fleißiger Spross",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-fleissiger-spross.webp"
+  },
+  "2224": {
+   "zh": "科伊兰·佩卡格，捕虹者",
+   "de": "Coileán Peucag, Regenbogenfänger",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-coilean-peucag-regenbogenfaenger.webp"
+  },
+  "2464": {
+   "zh": "务实神盾",
+   "de": "Pragmatische Aegis",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-pragmatische-aegis.webp"
+  },
+  "2438": {
+   "zh": "扭钳匠",
+   "de": "Obtorquist",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-obtorquist.webp"
+  },
+  "2292": {
+   "zh": "利落设陷者",
+   "de": "Flotter Fallensteller",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-flotter-fallensteller.webp"
+  },
+  "3642": {
+   "zh": "河狸狩猎",
+   "de": "Biberjagd",
+   "base": 25.0,
+   "prod": 25.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-biberjagd.webp"
+  },
+  "2226": {
+   "zh": "科尔姆卡皮尔，矮马完美主义者",
+   "de": "Colmcapaill, Ponyperfektionist",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-colmcapaill-ponyperfektionist.webp"
+  },
+  "2590": {
+   "zh": "瓦龙赫里·哈特拜因，速饮法师",
+   "de": "Waronheri Hartbain, Magus des (schnellen) Trinkens",
+   "base": -10.0,
+   "prod": 15.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-waronheri-hartbain-magus-des-schnellen-trinkens.webp"
+  },
+  "2227": {
+   "zh": "科姆纳尔·蒂内与燃烧战车",
+   "de": "Comhnall Tine mit seinem brennenden Streitwagen",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-comhnall-tine-mit-seinem-brennenden-streitwagen.webp"
+  },
+  "2388": {
+   "zh": "洛拉娜，传奇草药师",
+   "de": "Lorana, sagenumwobene Kräuterkundige",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-lorana-sagenumwobene-kraeuterkundige.webp"
+  },
+  "2205": {
+   "zh": "卡德里娜，银手",
+   "de": "Caderina mit dem Silberhändchen",
+   "base": 25.0,
+   "prod": 50.0,
+   "r": 4,
+   "kind": "expert",
+   "img": "img/cards/a117-item-caderina-mit-dem-silberhaendchen.webp"
+  },
+  "2406": {
+   "zh": "玛丽克斯，通晓海民者",
+   "de": "Marix, die die Meerleute kennt",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-marix-die-die-meerleute-kennt.webp"
+  },
+  "2493": {
+   "zh": "萨图恩熔炼师",
+   "de": "Saturnischer Schmelzer",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-saturnischer-schmelzer.webp"
+  },
+  "2136": {
+   "zh": "阿达尔·卢赫·格温，鸟鸣拟声名伶",
+   "de": "Adar Lluch Gwen, Star-Vogelstimmenimitatorin",
+   "base": 40.0,
+   "prod": 50.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-adar-lluch-gwen-star-vogelstimmenimitatorin.webp"
+  },
+  "3672": {
+   "zh": "群鸟飞翔",
+   "de": "Der Flug der Vögel",
+   "base": 25.0,
+   "prod": 25.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-der-flug-der-voegel.webp"
+  },
+  "2476": {
+   "zh": "托利波尔托斯（塞里福斯），磨镜术师",
+   "de": "Ptoliporthos von Serifos, polierte Katoptromantistin",
+   "base": 30.0,
+   "prod": 45.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-ptoliporthos-von-serifos-polierte-katoptromantistin.webp"
+  },
+  "6438": {
+   "zh": "女灯匠",
+   "de": "Lampenmacherin",
+   "base": 20.0,
+   "prod": 20.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-lampenmacherin.webp"
+  },
+  "6506": {
+   "zh": "帝国面包篮",
+   "de": "Brotkorb des Reichs",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 0,
+   "kind": "research",
+   "img": "img/cards/a117-forschung-brotkorb-des-reichs.webp"
+  },
+  "6479": {
+   "zh": "孔森提亚·斯托拉塔，衣冠楚楚",
+   "de": "Consentia Stolata, Gewandt und Gut Gewandet",
+   "base": 35.0,
+   "prod": 50.0,
+   "r": 6,
+   "kind": "expert",
+   "img": "img/cards/a117-item-consentia-stolata-gewandt-und-gut-gewandet.webp"
+  },
+  "6426": {
+   "zh": "掷椰枣者",
+   "de": "Dattelschmeißer",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-dattelschmeisser.webp"
+  },
+  "6430": {
+   "zh": "女制链匠",
+   "de": "Kettenmacherin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-kettenmacherin.webp"
+  },
+  "6436": {
+   "zh": "骆驼牧人",
+   "de": "Kamelhirte",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-kamelhirte.webp"
+  },
+  "6429": {
+   "zh": "塞申，采花人",
+   "de": "Seshen, Blütenpflücker",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-seshen-bluetenpfluecker.webp"
+  },
+  "6428": {
+   "zh": "乳品女工",
+   "de": "Milchverarbeiterin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-milchverarbeiterin.webp"
+  },
+  "6437": {
+   "zh": "阿西基斯，欲望占卜师",
+   "de": "Asychis, Wahrsagerin der Begierden",
+   "base": 35.0,
+   "prod": 35.0,
+   "r": 3,
+   "kind": "expert",
+   "img": "img/cards/a117-item-asychis-wahrsagerin-der-begierden.webp"
+  },
+  "6427": {
+   "zh": "河马低语者",
+   "de": "Nilpferdflüsterin",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 1,
+   "kind": "expert",
+   "img": "img/cards/a117-item-nilpferdfluesterin.webp"
+  },
+  "6424": {
+   "zh": "泥浆筛选工",
+   "de": "Schlammsieber",
+   "base": 10.0,
+   "prod": 10.0,
+   "r": 2,
+   "kind": "expert",
+   "img": "img/cards/a117-item-schlammsieber.webp"
+  }
+ },
+ "cards_by_building": {
+  "latium|Holzfäller": [
+   "2494",
+   "2397",
+   "2134"
+  ],
+  "latium|Sägewerk": [
+   "2397",
+   "2561"
+  ],
+  "latium|Lehmgrube": [
+   "2375",
+   "2444",
+   "2397",
+   "2344"
+  ],
+  "latium|Ziegelei": [
+   "6482",
+   "2397",
+   "2561",
+   "2557"
+  ],
+  "latium|Sandraffinerie": [
+   "2444",
+   "6434",
+   "2397",
+   "2519",
+   "2373"
+  ],
+  "latium|Kalksteinbruch": [
+   "2375",
+   "2444",
+   "2397"
+  ],
+  "latium|Betonmischer": [
+   "2397",
+   "2561"
+  ],
+  "latium|Marmorsteinbruch": [
+   "2375",
+   "2444",
+   "2397",
+   "2189"
+  ],
+  "latium|Marmor-Steinmetz": [
+   "2397",
+   "2374",
+   "2561"
+  ],
+  "latium|Mineralsteinbruch": [
+   "2375",
+   "2444",
+   "2236",
+   "2397",
+   "2373"
+  ],
+  "latium|Mineralienmalmer": [
+   "2397",
+   "2373"
+  ],
+  "latium|Mosaikmacher": [
+   "6482",
+   "2397",
+   "2561"
+  ],
+  "latium|Schafshof": [
+   "6420",
+   "2604",
+   "2479",
+   "2397",
+   "2235",
+   "2403",
+   "2342",
+   "2512"
+  ],
+  "latium|Segelmacher": [
+   "6420",
+   "2397",
+   "2512"
+  ],
+  "latium|Hanfhof": [
+   "6420",
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "2513",
+   "2538"
+  ],
+  "latium|Seilmacher": [
+   "6420",
+   "2397",
+   "2513"
+  ],
+  "latium|Eisenmine": [
+   "6420",
+   "2444",
+   "2421",
+   "2397",
+   "2376",
+   "2377"
+  ],
+  "latium|Ofen": [
+   "6420",
+   "6482",
+   "2274",
+   "2159",
+   "2397",
+   "2376",
+   "2377"
+  ],
+  "latium|Waffenschmied": [
+   "6420",
+   "2196",
+   "6482",
+   "2274",
+   "2601",
+   "2397",
+   "2183",
+   "2376",
+   "6431"
+  ],
+  "latium|Schweinehof": [
+   "6420",
+   "2479",
+   "2507",
+   "2340",
+   "2397",
+   "2377",
+   "2592",
+   "2606"
+  ],
+  "latium|Salzgärten": [
+   "6420",
+   "2397",
+   "2519",
+   "2377",
+   "2592",
+   "2283"
+  ],
+  "latium|Gerberei": [
+   "6420",
+   "2397",
+   "2377",
+   "2592"
+  ],
+  "latium|Rüstungsschmied": [
+   "6420",
+   "2196",
+   "6482",
+   "2274",
+   "2601",
+   "2397",
+   "2183",
+   "2377",
+   "6431"
+  ],
+  "latium|Sardinenhütte": [
+   "2280",
+   "2397",
+   "2530",
+   "2519",
+   "2434"
+  ],
+  "latium|Haferhof": [
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "2318"
+  ],
+  "latium|Breistand": [
+   "2397",
+   "2167",
+   "2318"
+  ],
+  "latium|Spinnerei": [
+   "2549",
+   "2397",
+   "2538"
+  ],
+  "latium|Pileusfilzer": [
+   "2397",
+   "2342"
+  ],
+  "latium|Weizenhof": [
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "6425",
+   "6422",
+   "2543"
+  ],
+  "latium|Kornmühle": [
+   "2195",
+   "2397",
+   "6425",
+   "2543"
+  ],
+  "latium|Bäckerei": [
+   "6482",
+   "2200",
+   "2397",
+   "2167",
+   "2543"
+  ],
+  "latium|Makrelenhütte": [
+   "2280",
+   "2397",
+   "2530",
+   "2519",
+   "2283"
+  ],
+  "latium|Garumsaucier": [
+   "2397",
+   "2283"
+  ],
+  "latium|Lavandulahof": [
+   "2217",
+   "2397",
+   "2433",
+   "2606"
+  ],
+  "latium|Sülzsieder": [
+   "6482",
+   "2340",
+   "2397",
+   "2606"
+  ],
+  "latium|Seifensieder": [
+   "2397",
+   "2606"
+  ],
+  "latium|Sandalenmacher": [
+   "2549",
+   "2397",
+   "2592"
+  ],
+  "latium|Harzzapfer": [
+   "2494",
+   "2397",
+   "2329",
+   "2344"
+  ],
+  "latium|Töpfer": [
+   "6482",
+   "2397",
+   "2344"
+  ],
+  "latium|Olivenzüchter": [
+   "2217",
+   "2397",
+   "2433",
+   "2357"
+  ],
+  "latium|Olivenpresse": [
+   "2397",
+   "2357"
+  ],
+  "latium|Pferdezüchter": [
+   "6420",
+   "2479",
+   "2597",
+   "2397",
+   "2329",
+   "2531"
+  ],
+  "latium|Weingut": [
+   "2217",
+   "2397",
+   "2433",
+   "2556"
+  ],
+  "latium|Bienenstock": [
+   "2397",
+   "2556",
+   "2202",
+   "6425",
+   "2412"
+  ],
+  "latium|Winzer": [
+   "2397",
+   "2556"
+  ],
+  "latium|Sandarakbaumschule": [
+   "2298",
+   "2217",
+   "2604",
+   "2397",
+   "2408",
+   "2433",
+   "2392",
+   "2374",
+   "2202",
+   "2412"
+  ],
+  "latium|Tabulus": [
+   "2397",
+   "2202",
+   "2412"
+  ],
+  "latium|Caelator": [
+   "2472",
+   "2397",
+   "2374",
+   "2189"
+  ],
+  "latium|Flachshof": [
+   "6480",
+   "6434",
+   "2215",
+   "2397",
+   "2408",
+   "2469",
+   "2329",
+   "2252",
+   "6432"
+  ],
+  "latium|Weber": [
+   "6434",
+   "2397",
+   "2469",
+   "6432"
+  ],
+  "latium|Schneckenzucht": [
+   "2479",
+   "2397",
+   "2408",
+   "2519",
+   "2469"
+  ],
+  "latium|Färberwerkstatt": [
+   "2397",
+   "2408",
+   "2469"
+  ],
+  "latium|Webstuhl": [
+   "2549",
+   "2397",
+   "2469"
+  ],
+  "latium|Glasschmelzer": [
+   "2265",
+   "6482",
+   "2274",
+   "2159",
+   "2397",
+   "2373"
+  ],
+  "latium|Glasbläser": [
+   "2265",
+   "6482",
+   "2397",
+   "2373"
+  ],
+  "latium|Austernfarm": [
+   "2280",
+   "2397",
+   "2530",
+   "2519",
+   "2535"
+  ],
+  "latium|Störzucht": [
+   "2280",
+   "2233",
+   "2397",
+   "2530",
+   "2535"
+  ],
+  "latium|Fischweider": [
+   "2397",
+   "2535"
+  ],
+  "latium|Meeresgourmet": [
+   "2397",
+   "2167",
+   "2535"
+  ],
+  "latium|Polsterer": [
+   "2397",
+   "2408"
+  ],
+  "latium|Liegenbauer": [
+   "2397",
+   "2408"
+  ],
+  "latium|Goldwäscher": [
+   "2375",
+   "2444",
+   "2604",
+   "2236",
+   "2397",
+   "2392",
+   "2374"
+  ],
+  "latium|Goldmine": [
+   "6442",
+   "2444",
+   "2222",
+   "2180",
+   "2604",
+   "2236",
+   "2421",
+   "2397",
+   "2392",
+   "2374"
+  ],
+  "latium|Goldschmied": [
+   "6442",
+   "6482",
+   "2274",
+   "2604",
+   "2236",
+   "2159",
+   "2397",
+   "2392",
+   "2374"
+  ],
+  "latium|Juwelier": [
+   "6482",
+   "2236",
+   "2397"
+  ],
+  "latium|Vergolder": [
+   "2604",
+   "2397",
+   "2392",
+   "2374"
+  ],
+  "latium|Latrunculi-Werkstatt": [
+   "2472",
+   "2397",
+   "2392",
+   "2374"
+  ],
+  "latium|Saitenmacher": [
+   "2604",
+   "2397"
+  ],
+  "latium|Lyramacher": [
+   "2604",
+   "2397"
+  ],
+  "albion|Holzfäller": [
+   "6420",
+   "2494",
+   "2397",
+   "2134",
+   "2377",
+   "2592"
+  ],
+  "albion|Sägewerk": [
+   "2397",
+   "2561"
+  ],
+  "albion|Schilfschneider": [
+   "2397",
+   "2134",
+   "6435",
+   "2287",
+   "6433",
+   "6466"
+  ],
+  "albion|Schlammtrockner": [
+   "2444",
+   "2397",
+   "2344"
+  ],
+  "albion|Lehmwerkhof": [
+   "2397",
+   "2561"
+  ],
+  "albion|Ziegelei": [
+   "6482",
+   "2397",
+   "2561",
+   "2557"
+  ],
+  "albion|Sandraffinerie": [
+   "2444",
+   "6434",
+   "2397",
+   "2519",
+   "2373"
+  ],
+  "albion|Kalksteinbruch": [
+   "2375",
+   "2444",
+   "2397"
+  ],
+  "albion|Betonmischer": [
+   "2397",
+   "2561"
+  ],
+  "albion|Granitsteinbruch": [
+   "2375",
+   "2444",
+   "2397"
+  ],
+  "albion|Granitschneider": [
+   "2397",
+   "2561",
+   "2237"
+  ],
+  "albion|Schafshof": [
+   "6420",
+   "2604",
+   "2479",
+   "2397",
+   "2235",
+   "2403",
+   "2342",
+   "2512"
+  ],
+  "albion|Segelmacher": [
+   "6420",
+   "2397",
+   "2512"
+  ],
+  "albion|Hanfhof": [
+   "6420",
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "2513",
+   "2538"
+  ],
+  "albion|Seilmacher": [
+   "6420",
+   "2397",
+   "2513"
+  ],
+  "albion|Eisenmine": [
+   "6420",
+   "2444",
+   "2421",
+   "2397",
+   "2376",
+   "2377"
+  ],
+  "albion|Ofen": [
+   "6420",
+   "6482",
+   "2274",
+   "2159",
+   "2397",
+   "2376",
+   "2377"
+  ],
+  "albion|Waffenschmied": [
+   "6420",
+   "2196",
+   "6482",
+   "2274",
+   "2601",
+   "2397",
+   "2183",
+   "2376",
+   "6431"
+  ],
+  "albion|Schweinehof": [
+   "6420",
+   "2479",
+   "2507",
+   "2340",
+   "2397",
+   "2377",
+   "2592",
+   "2606"
+  ],
+  "albion|Gerberei": [
+   "6420",
+   "2397",
+   "2377",
+   "2592"
+  ],
+  "albion|Rüstungsschmied": [
+   "6420",
+   "2196",
+   "6482",
+   "2274",
+   "2601",
+   "2397",
+   "2183",
+   "2377",
+   "6431"
+  ],
+  "albion|Aalfänger": [
+   "2280",
+   "2397",
+   "2530",
+   "2501"
+  ],
+  "albion|Herzmuschelfarm": [
+   "2397",
+   "2519",
+   "2425"
+  ],
+  "albion|Schuhweber": [
+   "2549",
+   "2397",
+   "2287"
+  ],
+  "albion|Spinnerei": [
+   "2549",
+   "2397",
+   "2538"
+  ],
+  "albion|Käserei": [
+   "2397",
+   "2167",
+   "2410"
+  ],
+  "albion|Auerochsenhof": [
+   "2479",
+   "2397",
+   "2410",
+   "2474"
+  ],
+  "albion|Gerstenhof": [
+   "6480",
+   "2316",
+   "2215",
+   "2397",
+   "2252",
+   "2288"
+  ],
+  "albion|Mälzerei": [
+   "2397",
+   "2288"
+  ],
+  "albion|Brauerei": [
+   "6482",
+   "2397",
+   "2288"
+  ],
+  "albion|Färberwaupflanze": [
+   "2224",
+   "2217",
+   "2397",
+   "2235",
+   "2464",
+   "2433",
+   "2403"
+  ],
+  "albion|Hosenmacher": [
+   "2549",
+   "2397",
+   "2235"
+  ],
+  "albion|Zinnmine": [
+   "2444",
+   "2421",
+   "2397",
+   "2464"
+  ],
+  "albion|Horner": [
+   "2397"
+  ],
+  "albion|Kupfermine": [
+   "2444",
+   "6434",
+   "2421",
+   "2397",
+   "2464",
+   "2403",
+   "2438"
+  ],
+  "albion|Drahtzwirbler": [
+   "6482",
+   "2397",
+   "2438"
+  ],
+  "albion|Bronzeschmelzer": [
+   "6482",
+   "2274",
+   "2159",
+   "2397",
+   "2464"
+  ],
+  "albion|Schildschläger": [
+   "2397",
+   "2464"
+  ],
+  "albion|Salzkrautsammler": [
+   "2397",
+   "2519",
+   "2292",
+   "2474"
+  ],
+  "albion|Erdofen": [
+   "6482",
+   "2397",
+   "2167",
+   "2474"
+  ],
+  "albion|Grünhände": [
+   "2397",
+   "2403"
+  ],
+  "albion|Birrusnäher": [
+   "2549",
+   "2397",
+   "2403"
+  ],
+  "albion|Biberfänger": [
+   "2397",
+   "2292"
+  ],
+  "albion|Salzkrautbrenner": [
+   "6482",
+   "2397",
+   "2292"
+  ],
+  "albion|Bieberhutmacher": [
+   "2397",
+   "2292"
+  ],
+  "albion|Pferdefänger": [
+   "2226",
+   "2397",
+   "2134",
+   "2531"
+  ],
+  "albion|Gestellbauer": [
+   "2397",
+   "2134"
+  ],
+  "albion|Wagenbauer": [
+   "2227",
+   "2397",
+   "2134",
+   "2590"
+  ],
+  "albion|Weizenhof": [
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "6425",
+   "6422",
+   "2543"
+  ],
+  "albion|Eselsmühle": [
+   "2397",
+   "6425",
+   "2543"
+  ],
+  "albion|Bäckerei": [
+   "6482",
+   "2200",
+   "2397",
+   "2167",
+   "2543"
+  ],
+  "albion|Kräutergarten": [
+   "2388",
+   "2217",
+   "2507",
+   "2397",
+   "2433"
+  ],
+  "albion|Salsicium": [
+   "6482",
+   "2507",
+   "2397",
+   "2167"
+  ],
+  "albion|Silbermine": [
+   "2444",
+   "2205",
+   "2406",
+   "2421",
+   "2397",
+   "2493"
+  ],
+  "albion|Silberschmiede": [
+   "6482",
+   "2274",
+   "2406",
+   "2159",
+   "2397",
+   "2493"
+  ],
+  "albion|Fibularium": [
+   "6482",
+   "2397",
+   "2493"
+  ],
+  "albion|Harzzapfer": [
+   "2494",
+   "2397",
+   "2329",
+   "2344"
+  ],
+  "albion|Töpfer": [
+   "6482",
+   "2397",
+   "2344"
+  ],
+  "albion|Pferdezüchter": [
+   "6420",
+   "2479",
+   "2597",
+   "2397",
+   "2329",
+   "2531"
+  ],
+  "albion|Vogelfänger": [
+   "2136",
+   "2340",
+   "2397"
+  ],
+  "albion|Zungenzieher": [
+   "2340",
+   "2397"
+  ],
+  "albion|Sülzsieder": [
+   "6482",
+   "2340",
+   "2397",
+   "2606"
+  ],
+  "albion|Delicium": [
+   "2136",
+   "2340",
+   "2397",
+   "2167"
+  ],
+  "albion|Flachshof": [
+   "6480",
+   "6434",
+   "2215",
+   "2397",
+   "2408",
+   "2469",
+   "2329",
+   "2252",
+   "6432"
+  ],
+  "albion|Haarnetzweber": [
+   "2397",
+   "2329"
+  ],
+  "albion|Perückenknüpfer": [
+   "2397",
+   "2329"
+  ],
+  "albion|Weingut": [
+   "2217",
+   "2397",
+   "2433",
+   "2556"
+  ],
+  "albion|Bienenstock": [
+   "2397",
+   "2556",
+   "2202",
+   "6425",
+   "2412"
+  ],
+  "albion|Winzer": [
+   "2397",
+   "2556"
+  ],
+  "albion|Kammmuschelzüchter": [
+   "2476",
+   "2406",
+   "2397",
+   "2519"
+  ],
+  "albion|Narcissium": [
+   "6482",
+   "2476",
+   "2406",
+   "2397"
+  ],
+  "aegyptus|Schlammtrockner": [
+   "2444",
+   "2397",
+   "6438",
+   "6435"
+  ],
+  "aegyptus|Schilfschneider": [
+   "2397",
+   "6435",
+   "6433",
+   "6466"
+  ],
+  "aegyptus|Lehmziegelei": [
+   "2397",
+   "2561",
+   "6435"
+  ],
+  "aegyptus|Kalksteinbruch": [
+   "2375",
+   "2444",
+   "2397"
+  ],
+  "aegyptus|Kalksteinmetz": [
+   "2397",
+   "2561"
+  ],
+  "aegyptus|Ziegelei": [
+   "6482",
+   "2397",
+   "2561",
+   "2557"
+  ],
+  "aegyptus|Granitsteinbruch": [
+   "2375",
+   "2444",
+   "2397"
+  ],
+  "aegyptus|Granitschneider": [
+   "2397",
+   "2561",
+   "2237"
+  ],
+  "aegyptus|Sandraffinerie": [
+   "2444",
+   "6434",
+   "2397"
+  ],
+  "aegyptus|Betonmischer": [
+   "2397",
+   "2561"
+  ],
+  "aegyptus|Mineralsteinbruch": [
+   "2375",
+   "2444",
+   "2236",
+   "2397",
+   "6433"
+  ],
+  "aegyptus|Mineralienmalmer": [
+   "2397",
+   "6433"
+  ],
+  "aegyptus|Mosaikmacher": [
+   "6482",
+   "2397",
+   "2561"
+  ],
+  "aegyptus|Holzfäller": [
+   "6420",
+   "2494",
+   "2397",
+   "2377",
+   "2592"
+  ],
+  "aegyptus|Sägewerk": [
+   "2397",
+   "2561"
+  ],
+  "aegyptus|Hanfhof": [
+   "6420",
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "2513",
+   "2538"
+  ],
+  "aegyptus|Seilmacher": [
+   "6420",
+   "2397",
+   "2513"
+  ],
+  "aegyptus|Schafshof": [
+   "6420",
+   "2479",
+   "2397",
+   "2512"
+  ],
+  "aegyptus|Segelmacher": [
+   "6420",
+   "2397",
+   "2512"
+  ],
+  "aegyptus|Eisenmine": [
+   "6420",
+   "2444",
+   "2421",
+   "2397",
+   "2376",
+   "2377"
+  ],
+  "aegyptus|Ofen": [
+   "6420",
+   "6482",
+   "2274",
+   "2159",
+   "2397",
+   "2376",
+   "2377"
+  ],
+  "aegyptus|Waffenschmied": [
+   "6420",
+   "2196",
+   "6482",
+   "2274",
+   "2601",
+   "2397",
+   "2183",
+   "2376",
+   "6431"
+  ],
+  "aegyptus|Sangahof": [
+   "6420",
+   "2479",
+   "2397",
+   "2410",
+   "2377",
+   "2592"
+  ],
+  "aegyptus|Gerberei": [
+   "6420",
+   "2397",
+   "2377",
+   "2592"
+  ],
+  "aegyptus|Rüstungsschmied": [
+   "6420",
+   "2196",
+   "6482",
+   "2274",
+   "2601",
+   "2397",
+   "2183",
+   "2377",
+   "6431"
+  ],
+  "aegyptus|Dattelfarm": [
+   "6479",
+   "6480",
+   "2494",
+   "2397",
+   "6426"
+  ],
+  "aegyptus|Haferhof": [
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "2318"
+  ],
+  "aegyptus|Breistand": [
+   "2397",
+   "2167",
+   "2318"
+  ],
+  "aegyptus|Perlenmacher": [
+   "2444",
+   "2397",
+   "6430"
+  ],
+  "aegyptus|Perlenfädler": [
+   "2549",
+   "2397",
+   "6430"
+  ],
+  "aegyptus|Spinnerei": [
+   "2549",
+   "2397",
+   "2538"
+  ],
+  "aegyptus|Haus der Kamele": [
+   "6420",
+   "2479",
+   "2397",
+   "6436"
+  ],
+  "aegyptus|Wildgansjäger": [
+   "2397",
+   "2606",
+   "6422"
+  ],
+  "aegyptus|Weizenhof": [
+   "6480",
+   "2215",
+   "2397",
+   "2252",
+   "6425",
+   "6422",
+   "2543"
+  ],
+  "aegyptus|Gänsebräter": [
+   "2397",
+   "2167",
+   "6422"
+  ],
+  "aegyptus|Gerstenhof": [
+   "6480",
+   "2316",
+   "2215",
+   "2397",
+   "2252",
+   "2288"
+  ],
+  "aegyptus|Mälzerei": [
+   "2397",
+   "2288"
+  ],
+  "aegyptus|Brauerei": [
+   "2397",
+   "2288"
+  ],
+  "aegyptus|Köhler": [
+   "2494",
+   "2397"
+  ],
+  "aegyptus|Kohlemine": [
+   "2444",
+   "2222",
+   "2421",
+   "2397"
+  ],
+  "aegyptus|Sülzsieder": [
+   "6482",
+   "2397",
+   "2606"
+  ],
+  "aegyptus|Kollyrist": [
+   "6482",
+   "2397"
+  ],
+  "aegyptus|Flachshof": [
+   "6480",
+   "6434",
+   "2215",
+   "2397",
+   "2252",
+   "6432"
+  ],
+  "aegyptus|Weber": [
+   "6434",
+   "2397",
+   "6432"
+  ],
+  "aegyptus|Plissierer": [
+   "2549",
+   "6434",
+   "2397",
+   "6432"
+  ],
+  "aegyptus|Kupfermine": [
+   "2444",
+   "6434",
+   "2421",
+   "2397"
+  ],
+  "aegyptus|Blaumischer": [
+   "6482",
+   "6434",
+   "2397"
+  ],
+  "aegyptus|Kunstglasierer": [
+   "6482",
+   "2397"
+  ],
+  "aegyptus|Sesamfarm": [
+   "6480",
+   "2215",
+   "2397",
+   "6438",
+   "2252"
+  ],
+  "aegyptus|Sesampresse": [
+   "2397",
+   "6438"
+  ],
+  "aegyptus|Lampenformer": [
+   "6482",
+   "2397"
+  ],
+  "aegyptus|Bienenstock": [
+   "6429",
+   "2397",
+   "2556",
+   "6425"
+  ],
+  "aegyptus|Eselsmühle": [
+   "2397",
+   "6425",
+   "2543"
+  ],
+  "aegyptus|Kaykerei": [
+   "2397",
+   "2167",
+   "6425"
+  ],
+  "aegyptus|Lotusfarm": [
+   "2217",
+   "6429",
+   "2397",
+   "2433"
+  ],
+  "aegyptus|Haus der Aufgüsse": [
+   "6429",
+   "2397"
+  ],
+  "aegyptus|Unguentarius": [
+   "2397"
+  ],
+  "aegyptus|Zinnmine": [
+   "2444",
+   "2421",
+   "2397"
+  ],
+  "aegyptus|Bronzeschmelzer": [
+   "6482",
+   "2274",
+   "2159",
+   "2397"
+  ],
+  "aegyptus|Tympanist": [
+   "2397"
+  ],
+  "aegyptus|Näherin": [
+   "2549",
+   "2397"
+  ],
+  "aegyptus|Bäckerei": [
+   "6482",
+   "2200",
+   "2397",
+   "2167",
+   "2543"
+  ],
+  "aegyptus|Käserei": [
+   "2397",
+   "2167",
+   "2410",
+   "6428"
+  ],
+  "aegyptus|Lavandulahof": [
+   "2217",
+   "2397",
+   "2433",
+   "2606"
+  ],
+  "aegyptus|Seifensieder": [
+   "2397",
+   "2606"
+  ],
+  "aegyptus|Sandalenmacher": [
+   "2549",
+   "2397",
+   "2592"
+  ],
+  "aegyptus|Papyrusmacher": [
+   "2397",
+   "2561",
+   "6433"
+  ],
+  "aegyptus|Olivenzüchter": [
+   "2217",
+   "2397",
+   "2433",
+   "2357"
+  ],
+  "aegyptus|Olivenpresse": [
+   "2357"
+  ],
+  "aegyptus|Weingut": [
+   "2217",
+   "2397",
+   "2433",
+   "2556"
+  ],
+  "aegyptus|Winzer": [
+   "2397",
+   "2556"
+  ],
+  "aegyptus|Großwildjäger": [
+   "6442",
+   "6437",
+   "2397",
+   "6427"
+  ],
+  "aegyptus|Granatapfelplantage": [
+   "2217",
+   "6437",
+   "2397",
+   "2433"
+  ],
+  "aegyptus|Feinkostmetzger": [
+   "6437",
+   "2397",
+   "2167"
+  ],
+  "aegyptus|Goldwäscher": [
+   "6442",
+   "2444",
+   "2236",
+   "2397",
+   "2519",
+   "6424"
+  ],
+  "aegyptus|Goldmine": [
+   "2444",
+   "2236",
+   "2421",
+   "2397"
+  ],
+  "aegyptus|Goldschmied": [
+   "6442",
+   "6482",
+   "2274",
+   "2236",
+   "2159",
+   "2397"
+  ],
+  "aegyptus|Juwelier": [
+   "6479",
+   "6482",
+   "2236",
+   "2397"
+  ],
+  "aegyptus|Melikratonmischer": [
+   "2397"
+  ],
+  "aegyptus|Kosmetiker": [
+   "2397"
+  ],
+  "aegyptus|Kästchenmacher": [
+   "6442"
+  ],
+  "aegyptus|Pferdezüchter": [
+   "6420",
+   "2479",
+   "2597",
+   "2397",
+   "2531"
+  ]
  }
 }

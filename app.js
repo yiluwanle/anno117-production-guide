@@ -7,8 +7,30 @@
   const CHAINS = D.chains;
   const G = D.goods || {};
   const GI = D.goods_img || {};
+  const CARDS = D.cards || {};
+  const CB = D.cards_by_building || {};
+  const CARD_MAX = 3;
 
-  const state = { region: 'all', mode: 'tech', q: '', n: 1, global: 0, tiers: new Set() };
+  const state = {
+    region: 'all', mode: 'tech', q: '', n: 1, global: 0, tiers: new Set(),
+    cards: {},          // "region|建筑德文名" → [cardId, ...]（最多 3 张）
+    cardQ: 'base',      // 卡牌品质：base 普通 / prod 传说
+  };
+
+  /* ---------------- 卡牌 ---------------- */
+  const ckey = (region, de) => region + '|' + de;
+  const cardsOf = (region, de) => CB[ckey(region, de)] || [];
+  const selCards = (region, de) => state.cards[ckey(region, de)] || [];
+  const cardVal = (id) => {
+    const c = CARDS[id];
+    if (!c) return 0;
+    return state.cardQ === 'prod' ? c.prod : c.base;
+  };
+  function cardAdd(region, de) {
+    let add = 0;
+    selCards(region, de).forEach((id) => { add += cardVal(id); });
+    return add;
+  }
 
   // URL 参数（便于分享具体查询）
   const params = new URLSearchParams(location.search);
@@ -29,8 +51,8 @@
   }
 
   /* ---------------- 计算 ---------------- */
-  // 生产力% = (100 + 筒仓100 + 鸽舍50 + 研究 + 全局) × 输水道系数
-  function productivity(b, mode, global) {
+  // 生产力% = (100 + 筒仓100 + 鸽舍50 + 研究 + 卡牌 + 全局) × 输水道系数
+  function productivity(b, mode, global, cards) {
     let add = 0;
     if (mode !== 'none') {
       if (b.silo) add += 100;
@@ -38,6 +60,7 @@
     }
     if (mode === 'tech') add += (b.research || 0);
     if (mode !== 'none') add += global;
+    add += cards || 0;
     const base = 100 + add;
     const aqua = (mode !== 'none' && b.aqua) ? 1.5 : 1;
     return base * aqua;
@@ -58,11 +81,12 @@
     return null;
   }
 
-  function solve(chain, mode, n, global) {
+  function solve(chain, mode, n, global, withCards) {
     const rows = chain.stages.map((s) => {
-      const p = productivity(s.bonus, mode, global);
+      const ca = withCards ? cardAdd(chain.region, s.de) : 0;
+      const p = productivity(s.bonus, mode, global, ca);
       const eff = s.time / (p / 100);
-      return { s, p, eff, out: 60 / eff };
+      return { s, p, eff, out: 60 / eff, cards: ca };
     });
     let ref = rows[rows.length - 1];
     for (let i = rows.length - 1; i >= 0; i--) {
@@ -90,7 +114,7 @@
   /* ---------------- 图片 ---------------- */
   const goodImg = (en) => GI[en] || '';
   const imgTag = (src, cls, alt) => (src
-    ? '<img class="' + cls + '" src="' + esc(src) + '" alt="' + esc(alt || '') + '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">'
+    ? '<img class="' + cls + '" src="' + esc(src) + '" alt="' + esc(alt || '') + '" loading="lazy" decoding="async" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'noimg\')">'
     : '');
 
   /* ---------------- 顶部统计 ---------------- */
@@ -252,7 +276,7 @@
 
   function recipeHTML(chain, rows) {
     const chip = (g) => '<span class="gchip">' + imgTag(goodImg(g), 'gi', gname(g)) + esc(gname(g)) + '</span>';
-    const items = rows.map((r) => {
+    const items = rows.map((r, i) => {
       const s = r.s;
       const ins = (s.inputs || []).length ? s.inputs.map(chip).join('<i class="plus">+</i>') : '<span class="gchip raw">野外采集</span>';
       const outs = (s.outputs || []).length ? s.outputs.map(chip).join('<i class="plus">+</i>') : '—';
@@ -262,18 +286,34 @@
       if (s.bonus.taube) bonusParts.push('鸽舍+50');
       if (s.bonus.research) bonusParts.push('研究+' + s.bonus.research);
       if (s.bonus.religion) bonusParts.push('宗教最高+' + s.bonus.religion + '（守护神，可选）');
+      const picked = selCards(chain.region, s.de);
+      const cardLine = picked.length
+        ? ' · <b class="cb-hi">卡牌 +' + fmt(r.cards) + '%（' +
+          picked.map((id) => esc(CARDS[id].zh)).join('、') + '）</b>'
+        : '';
       return '<li>' + imgTag(s.img, 'rthumb', s.zh) +
         '<span class="rmain"><span class="rname"><b>' + esc(s.zh) + '</b><em> ' + esc(s.en) + '</em></span>' +
         '<span class="rio">' + ins + '<i class="arr">→</i>' + outs + '</span></span>' +
         '<span class="rl-time">' + mmss(s.time) + ' · 生产力 ' + Math.round(r.p) + '% · 产出 ' + r.out.toFixed(2) + '/分</span>' +
-        '<span class="bonus-line">可用加成：' + (bonusParts.length ? bonusParts.join(' · ') : '无') + '</span></li>';
+        '<span class="bonus-line">可用加成：' + (bonusParts.length ? bonusParts.join(' · ') : '无') + cardLine + '</span>' +
+        cardBtn(chain, i) + '</li>';
     }).join('');
     return '<details class="recipe"><summary>逐栋配方与加成明细</summary><ul class="recipe-list">' + items + '</ul></details>';
   }
 
+  function cardBtn(chain, i) {
+    const s = chain.stages[i];
+    if (!s) return '';
+    const avail = cardsOf(chain.region, s.de);
+    if (!avail.length) return '';
+    const n = selCards(chain.region, s.de).length;
+    return '<button class="cbtn' + (n ? ' on' : '') + '" data-card-open="' + chain.id + ':' + i +
+      '" title="勾选该建筑的专家 / 物品卡（' + avail.length + ' 张可选）">' + (n ? '卡 ' + n + '/' + CARD_MAX : '＋卡') + '</button>';
+  }
+
   function chainHTML(chain) {
-    const rows = solve(chain, state.mode, state.n, state.global);
-    const rowsNone = solve(chain, 'none', state.n, 0);
+    const rows = solve(chain, state.mode, state.n, state.global, true);
+    const rowsNone = solve(chain, 'none', state.n, 0, false);
     const finalRow = rows[rows.length - 1] || rows[0];
     const lastRef = [...rows].reverse().find((r) => r.s.outputs && r.s.outputs.length) || finalRow;
     const lastRefNone = [...rowsNone].reverse().find((r) => r.s.outputs && r.s.outputs.length) || rowsNone[rowsNone.length - 1];
@@ -290,7 +330,8 @@
         : '<span class="delta ' + (d < 0 ? 'down' : 'flat') + '">' + (d > 0 ? '+' : '') + Math.round(d) + '%</span>';
       return '<tr>' +
         '<td><span class="bname">' + imgTag(r.s.img, 'bthumb', r.s.zh) +
-          '<span class="btext">' + esc(r.s.zh) + '<em>' + esc(r.s.en) + '</em></span>' + facilityIcons(r.s.bonus) + '</span></td>' +
+          '<span class="btext">' + esc(r.s.zh) + '<em>' + esc(r.s.en) + '</em></span>' + facilityIcons(r.s.bonus) +
+          cardBtn(chain, i) + '</span></td>' +
         '<td>' + mmss(r.s.time) + '</td>' +
         '<td class="c-yield">' + r.out.toFixed(2) + '</td>' +
         '<td class="c-none">' + fmt(n0) + '</td>' +
@@ -341,8 +382,18 @@
   const emptyEl = document.getElementById('empty');
   const countEl = document.getElementById('resultCount');
 
+  let lastList = [];
+  function updateCount() {
+    countEl.innerHTML = '共 <b style="color:#241f19">' + lastList.length + '</b> 条产线 · 基准：每 <b style="color:#241f19">' + state.n +
+      '</b> 座成品建筑 · 情景：<b style="color:#a9432a">' + MODE_ZH[state.mode] +
+      (state.global && state.mode !== 'none' ? '（额外 +' + state.global + '%）' : '') + '</b>' +
+      (Object.keys(state.cards).length ? ' · 已插卡 <b style="color:#a9432a">' +
+        Object.values(state.cards).reduce((a, v) => a + v.length, 0) + '</b> 张' : '');
+  }
+
   function render() {
     const list = visibleChains();
+    lastList = list;
     // 按地区 → 层级 分组（保持行省顺序）
     const groups = new Map();
     REGIONS.forEach((r) => r.tiers.forEach((t) => groups.set(r.id + '|' + t.name, { region: r, tier: t.name, items: [] })));
@@ -360,11 +411,131 @@
     }
     grid.innerHTML = html;
     emptyEl.hidden = list.length > 0;
-    countEl.innerHTML = '共 <b style="color:#241f19">' + list.length + '</b> 条产线 · 基准：每 <b style="color:#241f19">' + state.n +
-      '</b> 座成品建筑 · 情景：<b style="color:#a9432a">' + MODE_ZH[state.mode] +
-      (state.global && state.mode !== 'none' ? '（额外 +' + state.global + '%）' : '') + '</b>';
+    updateCount();
     syncURL();
   }
+
+  function rerenderChain(id) {
+    const chain = CHAINS.find((c) => c.id === id);
+    const el = grid.querySelector('article.chain[data-id="' + id + '"]');
+    if (!chain || !el) return;
+    const d0 = el.querySelector('details.recipe');
+    const wasOpen = d0 ? d0.open : false;
+    const scrollY = window.scrollY;
+    const tmp = document.createElement('div');
+    tmp.innerHTML = chainHTML(chain);
+    const next = tmp.firstElementChild;
+    if (!next) return;
+    if (wasOpen) { const d = next.querySelector('details.recipe'); if (d) d.open = true; }
+    el.replaceWith(next);
+    window.scrollTo(0, scrollY);
+    updateCount();
+  }
+
+  /* ---------------- 卡牌选择弹层 ---------------- */
+  const cm = document.getElementById('cardModal');
+  const cmTitle = document.getElementById('cmTitle');
+  const cmSub = document.getElementById('cmSub');
+  const cmList = document.getElementById('cmList');
+  const cmSum = document.getElementById('cmSum');
+  const cmQuality = document.getElementById('cmQuality');
+  let cmCtx = null;
+
+  const fmtVal = (c) => (c >= 0 ? '+' : '') + (Math.round(c * 10) / 10) + '%';
+
+  function cardMark(c) {
+    return '<span class="cm-ico rar-' + (c.r || 0) + '">' + imgTag(c.img, 'cimg', c.zh) +
+      '<i class="cm-fb">' + esc(c.zh.slice(0, 1)) + '</i></span>';
+  }
+
+  function renderCardList() {
+    if (!cmCtx) return;
+    const { chain, idx } = cmCtx;
+    const s = chain.stages[idx];
+    const ids = cardsOf(chain.region, s.de);
+    const sel = selCards(chain.region, s.de);
+    cmTitle.textContent = s.zh;
+    cmSub.innerHTML = '<em>' + esc(s.en) + '</em> · 可选 <b>' + ids.length + '</b> 张，已选 <b>' + sel.length + '/' + CARD_MAX +
+      '</b> · 加成与设施相加，最后统一乘水源系数';
+    cmList.innerHTML = ids.map((id) => {
+      const c = CARDS[id];
+      const on = sel.includes(id);
+      const dis = !on && sel.length >= CARD_MAX;
+      return '<button class="cm-row' + (on ? ' sel' : '') + (dis ? ' dis' : '') + '" data-pick="' + id + '">' +
+        cardMark(c) +
+        '<span class="cm-name"><b>' + esc(c.zh) + '</b><em>' + esc(c.de) + '</em></span>' +
+        '<span class="cm-val"><b class="' + (state.cardQ === 'base' ? 'cur' : '') + '">' + fmtVal(c.base) + '</b>' +
+        '<i class="' + (state.cardQ === 'prod' ? 'cur' : '') + '">' + fmtVal(c.prod) + '</i></span>' +
+        '<span class="cm-chk">' + (on ? '✓' : '') + '</span>' +
+        '</button>';
+    }).join('');
+    const p = productivity(s.bonus, state.mode, state.global, cardAdd(chain.region, s.de));
+    const p0 = productivity(s.bonus, state.mode, state.global, 0);
+    cmSum.innerHTML = '本栋生产力：' + MODE_ZH[state.mode] + '基础 <b>' + Math.round(p0) + '%</b>' +
+      (Math.abs(p - p0) > 0.01 ? ' → <b class="cb-hi">' + Math.round(p) + '%</b>' : '') +
+      (Math.abs(p - p0) > 0.01 ? '，周期 ' + mmss(s.time) + ' → ' + mmss(s.time / (p / 100)) : '');
+  }
+
+  function openCardModal(chainId, idx) {
+    const chain = CHAINS.find((c) => c.id === chainId);
+    if (!chain || !chain.stages[idx]) return;
+    cmCtx = { chain, idx };
+    renderCardList();
+    cm.hidden = false;
+    document.body.classList.add('cm-open');
+    const panel = cm.querySelector('.cm-panel');
+    if (panel) panel.scrollTop = 0;
+  }
+
+  function closeCardModal() {
+    if (!cmCtx) return;
+    const id = cmCtx.chain.id;
+    cmCtx = null;
+    cm.hidden = true;
+    document.body.classList.remove('cm-open');
+    rerenderChain(id);
+  }
+
+  cm.addEventListener('click', (e) => {
+    if (e.target.closest('[data-cm-close]')) { closeCardModal(); return; }
+    const q = e.target.closest('#cmQuality button');
+    if (q) {
+      state.cardQ = q.dataset.q;
+      [...cmQuality.children].forEach((x) => x.classList.toggle('active', x === q));
+      renderCardList();
+      return;
+    }
+    if (e.target.closest('#cmClear')) {
+      if (cmCtx) {
+        delete state.cards[ckey(cmCtx.chain.region, cmCtx.chain.stages[cmCtx.idx].de)];
+        renderCardList();
+      }
+      return;
+    }
+    const row = e.target.closest('[data-pick]');
+    if (row && cmCtx) {
+      const key = ckey(cmCtx.chain.region, cmCtx.chain.stages[cmCtx.idx].de);
+      const id = row.dataset.pick;
+      const cur = (state.cards[key] || []).slice();
+      const at = cur.indexOf(id);
+      if (at >= 0) cur.splice(at, 1);
+      else if (cur.length < CARD_MAX) cur.push(id);
+      else { row.classList.add('shake'); setTimeout(() => row.classList.remove('shake'), 420); return; }
+      if (cur.length) state.cards[key] = cur; else delete state.cards[key];
+      renderCardList();
+    }
+  });
+
+  grid.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-card-open]');
+    if (!b) return;
+    const parts = b.dataset.cardOpen.split(':');
+    openCardModal(parts[0], Number(parts[1]));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !cm.hidden) closeCardModal();
+  });
 
   // 初次同步 URL 状态到控件
   [...modeSeg.children].forEach((x) => x.classList.toggle('active', x.dataset.mode === state.mode));
