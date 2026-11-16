@@ -446,6 +446,9 @@
   const cardName = (g) => (CI[g] ? (CI[g][1] || CI[g][0]) : g);
   const isCheck = (v) => v === '✓' || v === '–' || v === '';
 
+  const RAR_ZH = { Common: '普通', Rare: '稀有', Epic: '史诗', Legendary: '传奇', Heroic: '英雄', Unique: '独特' };
+  const rarZh = (r) => RAR_ZH[r] || r || '—';
+
   function effText(e) {
     const v = e[1], p = e[2];
     if (v === '✓' && (p === '✓' || !p)) return '';
@@ -625,18 +628,21 @@
   const viewChains = document.getElementById('viewChains');
   const viewCards = document.getElementById('viewCards');
   const viewWish = document.getElementById('viewWish');
+  const viewPlan = document.getElementById('viewPlan');
   const viewTabs = document.getElementById('viewTabs');
   let curView = 'chains';
 
   function setView(v) {
-    if (!['chains', 'cards', 'wish'].includes(v)) v = 'chains';
+    if (!['chains', 'cards', 'wish', 'plan'].includes(v)) v = 'chains';
     curView = v;
     viewChains.hidden = v !== 'chains';
     viewCards.hidden = v !== 'cards';
     viewWish.hidden = v !== 'wish';
+    viewPlan.hidden = v !== 'plan';
     [...viewTabs.children].forEach((b) => b.classList.toggle('active', b.dataset.v === v));
     if (v === 'cards') renderCatalog();
     if (v === 'wish') renderWish();
+    if (v === 'plan' && window.Planner) window.Planner.render();
     const p = new URLSearchParams(location.search);
     if (v === 'chains') p.delete('view'); else p.set('view', v);
     const qs = p.toString();
@@ -696,11 +702,12 @@
     const inList = !!wish[g];
     const prod = prodOf(g);
     const head = prod ? '生产力 <b>' + prod.row[1] + '</b>' + (prod.row[2] && prod.row[2] !== prod.row[1] && !isCheck(prod.row[2]) ? ' / ' + prod.row[2] : '') : effLine(g, false);
-    return '<div class="ctile' + (inList ? ' in-list' : '') + '" data-cd="' + g + '" role="button" tabindex="0">' +
-      '<span class="cico">' + imgTag(r[5], '', cardName(g)) + '<i>' + esc((cardName(g) || '?').slice(0, 1)) + '</i></span>' +
+    const rc = ' rar-' + (r[2] || 'Common');
+    return '<div class="ctile' + rc + (inList ? ' in-list' : '') + '" data-cd="' + g + '" role="button" tabindex="0">' +
+      '<span class="cico' + rc + '">' + imgTag(r[5], '', cardName(g)) + '<i>' + esc((cardName(g) || '?').slice(0, 1)) + '</i></span>' +
       '<span class="ctxt">' +
         '<span class="cname">' + esc(cardName(g)) + '</span>' +
-        '<span class="csub"><i class="rar-chip r-' + esc(r[2] || 'Common') + '">' + esc(r[2] || '—') + '</i> ' +
+        '<span class="csub"><i class="rar-chip ' + rc.trim() + '">' + esc(rarZh(r[2])) + '</i> ' +
           esc(CAT_ZH[r[4]] || '') + ' · ' + esc(r[8][0] || '—') + '</span>' +
         '<span class="ceff">' + (head || '—') + '</span>' +
       '</span>' +
@@ -762,9 +769,11 @@
   function renderDetail() {
     const g = cdGuid, r = CI[g];
     if (!r) return;
+    const rc2 = ' rar-' + (r[2] || 'Common');
+    cdIco.className = 'cd-ico' + rc2;
     cdIco.innerHTML = imgTag(r[5], '', cardName(g)) + '<i style="font-size:18px;color:#867a6a">' + esc((cardName(g) || '?').slice(0, 1)) + '</i>';
     cdName.textContent = cardName(g);
-    cdMeta.innerHTML = '<i class="rar-chip r-' + esc(r[2] || 'Common') + '">' + esc(r[2] || '—') + '</i> ' +
+    cdMeta.innerHTML = '<i class="rar-chip' + rc2 + '">' + esc(rarZh(r[2])) + '</i> ' +
       (r[1] ? '<em>' + esc(r[0]) + '</em>' : '') + (r[3] ? ' · ' + esc(r[3]) : '') + ' · ' + esc(CAT_ZH[r[4]] || '');
 
     let html = '';

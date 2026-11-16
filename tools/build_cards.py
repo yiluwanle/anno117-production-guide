@@ -8,6 +8,9 @@ import os, re, json, shutil, io
 from PIL import Image
 import sys
 
+NAME_ZH = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                      'card_names_zh.json'), encoding='utf-8'))
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 RES = os.path.join(os.path.dirname(REPO), '_research')
@@ -176,7 +179,7 @@ def build():
 
         out[guid] = [
             it['name'],                       # 0 英文名
-            vc.get('zh', ''),                 # 1 中文名（vitablo 已有）
+            NAME_ZH.get(guid) or vc.get('zh', ''),  # 1 中文名（人工译名优先）
             it['rarity'] or it['kind'].replace(' Specialist', ''),  # 2 稀有度
             it['niche'],                      # 3 流派
             cat,                              # 4 分类

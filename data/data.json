@@ -101,7 +101,18 @@
    "inputs": [],
    "outputs": [
     "Wood"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 4,
+   "cost": "100 Denarii",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Sägewerk": {
    "de": "Sägewerk",
@@ -113,7 +124,18 @@
    ],
    "outputs": [
     "Timber"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 8,
+   "cost": "250 Denarii",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Lehmgrube": {
    "de": "Lehmgrube",
@@ -123,7 +145,18 @@
    "inputs": [],
    "outputs": [
     "Clay"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 8,
+   "cost": "2 Timber",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Ziegelei": {
    "de": "Ziegelei",
@@ -135,7 +168,18 @@
    ],
    "outputs": [
     "Tiles"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 12,
+   "cost": "3 Timber",
+   "fx": "Fire Safety (-2)",
+   "tier": "Plebeians"
   },
   "Sandraffinerie": {
    "de": "Sandraffinerie",
@@ -145,7 +189,18 @@
    "inputs": [],
    "outputs": [
     "Silica"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    6,
+    7
+   ],
+   "denari": 10,
+   "cost": "3 Timber and 2 Tiles",
+   "fx": [],
+   "tier": "Eques"
   },
   "Kalksteinbruch": {
    "de": "Kalksteinbruch",
@@ -155,7 +210,18 @@
    "inputs": [],
    "outputs": [
     "Limestone"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 12,
+   "cost": "2 Timber and 1 Tiles",
+   "fx": "Health (-2)",
+   "tier": "Eques"
   },
   "Betonmischer": {
    "de": "Betonmischer",
@@ -168,7 +234,18 @@
    ],
    "outputs": [
     "Concrete"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    5,
+    6
+   ],
+   "denari": 16,
+   "cost": "1 Timber and 4 Tiles",
+   "fx": [],
+   "tier": "Eques"
   },
   "Marmorsteinbruch": {
    "de": "Marmorsteinbruch",
@@ -178,7 +255,18 @@
    "inputs": [],
    "outputs": [
     "Uncut Marble"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 16,
+   "cost": "2 Timber , 1 Tiles and 2 Concrete",
+   "fx": "Health (-2)",
+   "tier": "Eques"
   },
   "Marmor-Steinmetz": {
    "de": "Marmor-Steinmetz",
@@ -190,7 +278,18 @@
    ],
    "outputs": [
     "Marble"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    5,
+    7
+   ],
+   "denari": 24,
+   "cost": "2 Timber , 3 Tiles and 2 Concrete",
+   "fx": "Prestige (+1) and Health (-1)",
+   "tier": "Eques"
   },
   "Mineralsteinbruch": {
    "de": "Mineralsteinbruch",
@@ -200,7 +299,18 @@
    "inputs": [],
    "outputs": [
     "Minerals"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 20,
+   "cost": "2 Timber , 1 Tiles and 1 Concrete",
+   "fx": "Health (-2)",
+   "tier": "Eques"
   },
   "Mineralienmalmer": {
    "de": "Mineralienmalmer",
@@ -212,7 +322,18 @@
    ],
    "outputs": [
     "Pigments"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    5,
+    8
+   ],
+   "denari": 10,
+   "cost": "1 Timber , 3 Tiles , 2 Concrete and 2 Marble",
+   "fx": "Health (-3)",
+   "tier": "Eques"
   },
   "Mosaikmacher": {
    "de": "Mosaikmacher",
@@ -225,7 +346,18 @@
    ],
    "outputs": [
     "Mosaics"
-   ]
+   ],
+   "workers": 14,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    8,
+    8
+   ],
+   "denari": 30,
+   "cost": "1 Timber , 4 Tiles , 3 Concrete and 4 Marble",
+   "fx": "Prestige (+2) and Fire Safety (-2)",
+   "tier": "Patricians"
   },
   "Schafshof": {
    "de": "Schafshof",
@@ -235,7 +367,18 @@
    "inputs": [],
    "outputs": [
     "Sheep"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 4,
+   "cost": "2 Timber",
+   "fx": [],
+   "tier": "Liberti"
   },
   "Segelmacher": {
    "de": "Segelmacher",
@@ -247,7 +390,18 @@
    ],
    "outputs": [
     "Sails"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    6,
+    7
+   ],
+   "denari": 12,
+   "cost": "2 Timber and 4 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Hanfhof": {
    "de": "Hanfhof",
@@ -257,7 +411,18 @@
    "inputs": [],
    "outputs": [
     "Hemp"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 4,
+   "cost": "2 Timber",
+   "fx": [],
+   "tier": "Liberti"
   },
   "Seilmacher": {
    "de": "Seilmacher",
@@ -269,7 +434,18 @@
    ],
    "outputs": [
     "Ropes"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    8
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 3 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Eisenmine": {
    "de": "Eisenmine",
@@ -279,7 +455,18 @@
    "inputs": [],
    "outputs": [
     "Iron Ore"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": "Health (-2)",
+   "tier": "Plebeians"
   },
   "Ofen": {
    "de": "Ofen",
@@ -291,7 +478,18 @@
    ],
    "outputs": [
     "Iron"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 8,
+   "cost": "1 Timber and 4 Tiles",
+   "fx": "Fire Safety (-2)",
+   "tier": "Plebeians"
   },
   "Waffenschmied": {
    "de": "Waffenschmied",
@@ -303,7 +501,18 @@
    ],
    "outputs": [
     "Weapons"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 16,
+   "cost": "1 Timber and 3 Tiles",
+   "fx": "Income (+1) and Fire Safety (-2)",
+   "tier": "Plebeians"
   },
   "Schweinehof": {
    "de": "Schweinehof",
@@ -313,7 +522,18 @@
    "inputs": [],
    "outputs": [
     "Pigs"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 6,
+   "cost": "1 Timber and 2 Tiles",
+   "fx": "Health (-2)",
+   "tier": "Plebeians"
   },
   "Salzgärten": {
    "de": "Salzgärten",
@@ -323,7 +543,18 @@
    "inputs": [],
    "outputs": [
     "Salt"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    5,
+    9
+   ],
+   "denari": 8,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Gerberei": {
    "de": "Gerberei",
@@ -336,7 +567,18 @@
    ],
    "outputs": [
     "Leather"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": "Happiness (-2)",
+   "tier": "Plebeians"
   },
   "Rüstungsschmied": {
    "de": "Rüstungsschmied",
@@ -349,7 +591,18 @@
    ],
    "outputs": [
     "Armour"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    6,
+    7
+   ],
+   "denari": 20,
+   "cost": "4 Timber and 5 Tiles",
+   "fx": "Income (+1) and Fire Safety (-2)",
+   "tier": "Plebeians"
   },
   "Sardinenhütte": {
    "de": "Sardinenhütte",
@@ -359,7 +612,18 @@
    "inputs": [],
    "outputs": [
     "Sardines"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 6,
+   "cost": "2 Timber",
+   "fx": [],
+   "tier": "Liberti"
   },
   "Haferhof": {
    "de": "Haferhof",
@@ -369,7 +633,18 @@
    "inputs": [],
    "outputs": [
     "Oat"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 4,
+   "cost": "3 Timber",
+   "fx": [],
+   "tier": "Liberti"
   },
   "Breistand": {
    "de": "Breistand",
@@ -381,7 +656,18 @@
    ],
    "outputs": [
     "Porridge"
-   ]
+   ],
+   "workers": 2,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 8,
+   "cost": "2 Timber",
+   "fx": [],
+   "tier": "Liberti"
   },
   "Spinnerei": {
    "de": "Spinnerei",
@@ -393,7 +679,18 @@
    ],
    "outputs": [
     "Tunics"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 8,
+   "cost": "2 Timber",
+   "fx": "Income (+1)",
+   "tier": "Liberti"
   },
   "Pileusfilzer": {
    "de": "Pileusfilzer",
@@ -405,7 +702,18 @@
    ],
    "outputs": [
     "Pileus"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 8,
+   "cost": "2 Timber",
+   "fx": "Income (+1)",
+   "tier": "Liberti"
   },
   "Weizenhof": {
    "de": "Weizenhof",
@@ -415,7 +723,18 @@
    "inputs": [],
    "outputs": [
     "Wheat"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 6,
+   "cost": "3 Timber and 1 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Kornmühle": {
    "de": "Kornmühle",
@@ -427,7 +746,18 @@
    ],
    "outputs": [
     "Flour"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 8,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Bäckerei": {
    "de": "Bäckerei",
@@ -439,7 +769,18 @@
    ],
    "outputs": [
     "Bread"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 14,
+   "cost": "1 Timber and 3 Tiles",
+   "fx": "Income (+2) and Fire Safety (-2)",
+   "tier": "Plebeians"
   },
   "Makrelenhütte": {
    "de": "Makrelenhütte",
@@ -449,7 +790,18 @@
    "inputs": [],
    "outputs": [
     "Mackerel"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    9
+   ],
+   "denari": 8,
+   "cost": "2 Timber and 1 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Garumsaucier": {
    "de": "Garumsaucier",
@@ -462,7 +814,18 @@
    ],
    "outputs": [
     "Garum"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 12,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": "Income (+1) and Happiness (-2)",
+   "tier": "Plebeians"
   },
   "Lavandulahof": {
    "de": "Lavandulahof",
@@ -472,7 +835,18 @@
    "inputs": [],
    "outputs": [
     "Lavender"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 6,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": "Happiness (+1)",
+   "tier": "Plebeians"
   },
   "Sülzsieder": {
    "de": "Sülzsieder",
@@ -484,7 +858,18 @@
    ],
    "outputs": [
     "Lard"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 10,
+   "cost": "1 Timber and 2 Tiles",
+   "fx": "Happiness (-2) and Fire Safety (-2)",
+   "tier": "Plebeians"
   },
   "Seifensieder": {
    "de": "Seifensieder",
@@ -497,7 +882,18 @@
    ],
    "outputs": [
     "Soap"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 12,
+   "cost": "2 Timber and 1 Tiles",
+   "fx": "Health (+1) and Happiness (-1)",
+   "tier": "Plebeians"
   },
   "Sandalenmacher": {
    "de": "Sandalenmacher",
@@ -509,7 +905,18 @@
    ],
    "outputs": [
     "Sandals"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 12,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": "Income (+1)",
+   "tier": "Plebeians"
   },
   "Harzzapfer": {
    "de": "Harzzapfer",
@@ -519,7 +926,18 @@
    "inputs": [],
    "outputs": [
     "Resin"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 8,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Töpfer": {
    "de": "Töpfer",
@@ -532,7 +950,18 @@
    ],
    "outputs": [
     "Amphorae"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 14,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": "Income (+1) and Fire Safety (-2)",
+   "tier": "Plebeians"
   },
   "Olivenzüchter": {
    "de": "Olivenzüchter",
@@ -542,7 +971,18 @@
    "inputs": [],
    "outputs": [
     "Olives"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 6,
+   "cost": "1 Timber and 3 Tiles",
+   "fx": [],
+   "tier": "Plebeians"
   },
   "Olivenpresse": {
    "de": "Olivenpresse",
@@ -554,7 +994,18 @@
    ],
    "outputs": [
     "Olive Oil"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    5,
+    6
+   ],
+   "denari": 16,
+   "cost": "2 Timber and 3 Tiles",
+   "fx": "Health (+1)",
+   "tier": "Plebeians"
   },
   "Pferdezüchter": {
    "de": "Pferdezüchter",
@@ -564,7 +1015,18 @@
    "inputs": [],
    "outputs": [
     "Horses"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 16,
+   "cost": "1 Timber , 3 Tiles and 2 Concrete",
+   "fx": "Health (-1) and Happiness (+1)",
+   "tier": ""
   },
   "Weingut": {
    "de": "Weingut",
@@ -574,7 +1036,18 @@
    "inputs": [],
    "outputs": [
     "Grapes"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 8,
+   "cost": "2 Timber , 3 Tiles and 1 Concrete",
+   "fx": [],
+   "tier": "Eques"
   },
   "Bienenstock": {
    "de": "Bienenstock",
@@ -584,7 +1057,18 @@
    "inputs": [],
    "outputs": [
     "Honeycombs"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 14,
+   "cost": "1 Timber , 2 Tiles and 2 Concrete",
+   "fx": [],
+   "tier": "Eques"
   },
   "Winzer": {
    "de": "Winzer",
@@ -597,7 +1081,18 @@
    ],
    "outputs": [
     "Wine"
-   ]
+   ],
+   "workers": 14,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    6,
+    9
+   ],
+   "denari": 30,
+   "cost": "2 Timber , 5 Tiles and 2 Concrete",
+   "fx": "Income (+1) and Knowledge (+1)",
+   "tier": "Eques"
   },
   "Sandarakbaumschule": {
    "de": "Sandarakbaumschule",
@@ -607,7 +1102,18 @@
    "inputs": [],
    "outputs": [
     "Sandarac Wood"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 8,
+   "cost": "2 Timber , 3 Tiles and 1 Concrete",
+   "fx": [],
+   "tier": "Eques"
   },
   "Tabulus": {
    "de": "Tabulus",
@@ -620,7 +1126,18 @@
    ],
    "outputs": [
     "Writing Tables"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    3,
+    5
+   ],
+   "denari": 22,
+   "cost": "2 Timber , 3 Tiles , 1 Concrete and 1 Marble",
+   "fx": "Knowledge (+1)",
+   "tier": "Eques"
   },
   "Caelator": {
    "de": "Caelator",
@@ -633,7 +1150,18 @@
    ],
    "outputs": [
     "Statuettes"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 28,
+   "cost": "3 Timber , 4 Tiles , 3 Concrete and 2 Marble",
+   "fx": "Prestige (+3) and Health (-1)",
+   "tier": ""
   },
   "Flachshof": {
    "de": "Flachshof",
@@ -643,7 +1171,18 @@
    "inputs": [],
    "outputs": [
     "Flax"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 8,
+   "cost": "1 Timber , 2 Tiles and 2 Concrete",
+   "fx": [],
+   "tier": "Eques"
   },
   "Weber": {
    "de": "Weber",
@@ -655,7 +1194,18 @@
    ],
    "outputs": [
     "Cloth"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    6,
+    6
+   ],
+   "denari": 12,
+   "cost": "1 Timber , 4 Tiles and 2 Concrete",
+   "fx": [],
+   "tier": "Eques"
   },
   "Schneckenzucht": {
    "de": "Schneckenzucht",
@@ -665,7 +1215,18 @@
    "inputs": [],
    "outputs": [
     "Murex Snails"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    5,
+    11
+   ],
+   "denari": 10,
+   "cost": "3 Timber , 3 Tiles and 1 Concrete",
+   "fx": [],
+   "tier": "Eques"
   },
   "Färberwerkstatt": {
    "de": "Färberwerkstatt",
@@ -677,7 +1238,18 @@
    ],
    "outputs": [
     "Tyrian Purple"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 12,
+   "cost": "1 Timber , 4 Tiles and 2 Concrete",
+   "fx": "Happiness (-3)",
+   "tier": "Eques"
   },
   "Webstuhl": {
    "de": "Webstuhl",
@@ -690,7 +1262,18 @@
    ],
    "outputs": [
     "Togas"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 20,
+   "cost": "1 Timber , 3 Tiles and 3 Concrete",
+   "fx": "Income (+2)",
+   "tier": "Eques"
   },
   "Glasschmelzer": {
    "de": "Glasschmelzer",
@@ -702,7 +1285,18 @@
    ],
    "outputs": [
     "Glass"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 12,
+   "cost": "2 Timber , 2 Tiles and 1 Concrete",
+   "fx": "Fire Safety (-2)",
+   "tier": "Eques"
   },
   "Glasbläser": {
    "de": "Glasbläser",
@@ -715,7 +1309,18 @@
    ],
    "outputs": [
     "Fine Glass"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Eques",
+   "wclass_zh": "骑士",
+   "size": [
+    6,
+    7
+   ],
+   "denari": 26,
+   "cost": "3 Timber , 4 Tiles , 3 Concrete and 2 Marble",
+   "fx": "Prestige (+2) and Fire Safety (-2)",
+   "tier": "Eques"
   },
   "Austernfarm": {
    "de": "Austernfarm",
@@ -725,7 +1330,18 @@
    "inputs": [],
    "outputs": [
     "Oysters"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    6,
+    12
+   ],
+   "denari": 12,
+   "cost": "4 Timber , 3 Tiles and 2 Concrete",
+   "fx": [],
+   "tier": "Patricians"
   },
   "Störzucht": {
    "de": "Störzucht",
@@ -735,7 +1351,18 @@
    "inputs": [],
    "outputs": [
     "Sturgeon"
-   ]
+   ],
+   "workers": 2,
+   "wclass": "Liberti",
+   "wclass_zh": "自由民",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 12,
+   "cost": "2 Timber , 2 Tiles and 1 Concrete",
+   "fx": [],
+   "tier": "Patricians"
   },
   "Fischweider": {
    "de": "Fischweider",
@@ -747,7 +1374,18 @@
    ],
    "outputs": [
     "Caviar"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 30,
+   "cost": "2 Timber , 2 Tiles , 1 Concrete and 1 Marble",
+   "fx": [],
+   "tier": "Patricians"
   },
   "Meeresgourmet": {
    "de": "Meeresgourmet",
@@ -760,7 +1398,18 @@
    ],
    "outputs": [
     "Oysters with Caviar"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    6,
+    6
+   ],
+   "denari": 40,
+   "cost": "2 Timber , 2 Tiles , 1 Concrete , 2 Marble and 1 Mosaics",
+   "fx": "Population (+1) and Health (+1)",
+   "tier": "Patricians"
   },
   "Polsterer": {
    "de": "Polsterer",
@@ -773,7 +1422,18 @@
    ],
    "outputs": [
     "Cushions"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    3,
+    5
+   ],
+   "denari": 16,
+   "cost": "1 Timber , 1 Tiles , 2 Concrete , 3 Marble and 2 Mosaics",
+   "fx": [],
+   "tier": "Patricians"
   },
   "Liegenbauer": {
    "de": "Liegenbauer",
@@ -786,7 +1446,18 @@
    ],
    "outputs": [
     "Loungers"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    5,
+    7
+   ],
+   "denari": 28,
+   "cost": "2 Timber , 3 Tiles , 2 Concrete , 4 Marble and 3 Mosaics",
+   "fx": "Prestige (+2) and Fire Safety (-1)",
+   "tier": "Patricians"
   },
   "Goldwäscher": {
    "de": "Goldwäscher",
@@ -796,7 +1467,18 @@
    "inputs": [],
    "outputs": [
     "Gold Ore"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 20,
+   "cost": "2 Timber , 2 Tiles and 2 Concrete",
+   "fx": [],
+   "tier": "Patricians"
   },
   "Goldmine": {
    "de": "Goldmine",
@@ -806,7 +1488,18 @@
    "inputs": [],
    "outputs": [
     "Gold Ore"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Plebeians",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 20,
+   "cost": "2 Timber , 1 Tiles and 1 Concrete",
+   "fx": "Health (-2)",
+   "tier": ""
   },
   "Goldschmied": {
    "de": "Goldschmied",
@@ -818,7 +1511,18 @@
    ],
    "outputs": [
     "Gold"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 26,
+   "cost": "1 Timber , 3 Tiles , 3 Concrete and 2 Marble",
+   "fx": "Fire Safety (-2)",
+   "tier": "Patricians"
   },
   "Juwelier": {
    "de": "Juwelier",
@@ -831,7 +1535,18 @@
    ],
    "outputs": [
     "Necklaces"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 48,
+   "cost": "1 Timber , 3 Concrete , 3 Marble and 3 Mosaics",
+   "fx": "Prestige (+3) and Fire Safety (-2)",
+   "tier": "Patricians"
   },
   "Vergolder": {
    "de": "Vergolder",
@@ -844,7 +1559,18 @@
    ],
    "outputs": [
     "Ornate Wood"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 14,
+   "cost": "1 Timber , 2 Tiles , 3 Concrete , 2 Marble and 3 Mosaics",
+   "fx": [],
+   "tier": "Patricians"
   },
   "Latrunculi-Werkstatt": {
    "de": "Latrunculi-Werkstatt",
@@ -857,7 +1583,18 @@
    ],
    "outputs": [
     "Latrunculispiele"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    5,
+    6
+   ],
+   "denari": 32,
+   "cost": "2 Timber , 3 Tiles , 3 Concrete , 3 Marble and 3 Mosaics",
+   "fx": "Income (+1), Knowledge (+1) and Happiness (+1)",
+   "tier": ""
   },
   "Saitenmacher": {
    "de": "Saitenmacher",
@@ -869,7 +1606,18 @@
    ],
    "outputs": [
     "String"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 14,
+   "cost": "2 Timber , 2 Tiles , 1 Concrete and 1 Mosaics",
+   "fx": "Happiness (-1)",
+   "tier": "Patricians"
   },
   "Lyramacher": {
    "de": "Lyramacher",
@@ -882,7 +1630,18 @@
    ],
    "outputs": [
     "Lyres"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Patricians",
+   "wclass_zh": "元老",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 30,
+   "cost": "2 Timber , 3 Tiles , 3 Concrete , 3 Marble and 3 Mosaics",
+   "fx": "Income (+1) and Happiness (+1)",
+   "tier": "Patricians"
   },
   "Schilfschneider": {
    "de": "Schilfschneider",
@@ -892,7 +1651,18 @@
    "inputs": [],
    "outputs": [
     "Reeds"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 2,
+   "cost": "2 Timber",
+   "fx": [],
+   "tier": "Waders"
   },
   "Schlammtrockner": {
    "de": "Schlammtrockner",
@@ -902,7 +1672,18 @@
    "inputs": [],
    "outputs": [
     "Mud"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    7,
+    7
+   ],
+   "denari": 4,
+   "cost": "3 Timber",
+   "fx": [],
+   "tier": "Smiths"
   },
   "Lehmwerkhof": {
    "de": "Lehmwerkhof",
@@ -915,7 +1696,18 @@
    ],
    "outputs": [
     "Wattle & Daub"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    5,
+    7
+   ],
+   "denari": 10,
+   "cost": "5 Timber",
+   "fx": [],
+   "tier": "Smiths"
   },
   "Granitsteinbruch": {
    "de": "Granitsteinbruch",
@@ -925,7 +1717,18 @@
    "inputs": [],
    "outputs": [
     "Granite Block"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 8,
+   "cost": "2 Timber and 2 Wattle & Daub",
+   "fx": "Health (-2)",
+   "tier": "Aldermen"
   },
   "Granitschneider": {
    "de": "Granitschneider",
@@ -937,7 +1740,18 @@
    ],
    "outputs": [
     "Granite"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    5,
+    8
+   ],
+   "denari": 16,
+   "cost": "5 Timber and 3 Wattle & Daub",
+   "fx": "Prestige (+1) and Health (-1)",
+   "tier": "Aldermen"
   },
   "Aalfänger": {
    "de": "Aalfänger",
@@ -947,7 +1761,18 @@
    "inputs": [],
    "outputs": [
     "Eels"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 6,
+   "cost": "2 Timber",
+   "fx": [],
+   "tier": "Waders"
   },
   "Herzmuschelfarm": {
    "de": "Herzmuschelfarm",
@@ -957,7 +1782,18 @@
    "inputs": [],
    "outputs": [
     "Cockles"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    7,
+    9
+   ],
+   "denari": 6,
+   "cost": "3 Timber",
+   "fx": [],
+   "tier": "Waders"
   },
   "Schuhweber": {
    "de": "Schuhweber",
@@ -969,7 +1805,18 @@
    ],
    "outputs": [
     "Reed Shoes"
-   ]
+   ],
+   "workers": 2,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 8,
+   "cost": "3 Timber",
+   "fx": "Happiness (+1)",
+   "tier": "Waders"
   },
   "Käserei": {
    "de": "Käserei",
@@ -981,7 +1828,18 @@
    ],
    "outputs": [
     "Cheese"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 2 Wattle & Daub",
+   "fx": "Happiness (+2)",
+   "tier": "Smiths"
   },
   "Auerochsenhof": {
    "de": "Auerochsenhof",
@@ -991,7 +1849,18 @@
    "inputs": [],
    "outputs": [
     "Aurochs"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    5,
+    7
+   ],
+   "denari": 4,
+   "cost": "3 Timber and 2 Wattle & Daub",
+   "fx": "Health (-2)",
+   "tier": "Smiths"
   },
   "Gerstenhof": {
    "de": "Gerstenhof",
@@ -1001,7 +1870,18 @@
    "inputs": [],
    "outputs": [
     "Barley"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 4,
+   "cost": "2 Timber and 1 Wattle & Daub",
+   "fx": [],
+   "tier": "Smiths"
   },
   "Mälzerei": {
    "de": "Mälzerei",
@@ -1013,7 +1893,18 @@
    ],
    "outputs": [
     "Malt"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 8,
+   "cost": "3 Timber and 1 Wattle & Daub",
+   "fx": [],
+   "tier": "Smiths"
   },
   "Brauerei": {
    "de": "Brauerei",
@@ -1025,7 +1916,18 @@
    ],
    "outputs": [
     "Beer"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 2 Wattle & Daub",
+   "fx": "Income (+2) and Fire Safety (-2)",
+   "tier": "Smiths"
   },
   "Färberwaupflanze": {
    "de": "Färberwaupflanze",
@@ -1035,7 +1937,18 @@
    "inputs": [],
    "outputs": [
     "Dye Plants"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 4,
+   "cost": "1 Timber and 1 Wattle & Daub",
+   "fx": [],
+   "tier": "Smiths"
   },
   "Hosenmacher": {
    "de": "Hosenmacher",
@@ -1048,7 +1961,18 @@
    ],
    "outputs": [
     "Trousers"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 2 Wattle & Daub",
+   "fx": "Income (+1) and Health (+1)",
+   "tier": "Smiths"
   },
   "Zinnmine": {
    "de": "Zinnmine",
@@ -1058,7 +1982,18 @@
    "inputs": [],
    "outputs": [
     "Tin Ore"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 4,
+   "cost": "2 Timber and 2 Wattle & Daub",
+   "fx": "Health (-2)",
+   "tier": "Smiths"
   },
   "Horner": {
    "de": "Horner",
@@ -1071,7 +2006,18 @@
    ],
    "outputs": [
     "Drinking Horns"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    3,
+    5
+   ],
+   "denari": 12,
+   "cost": "3 Timber and 4 Wattle & Daub",
+   "fx": "Income (+1) and Happiness (+1)",
+   "tier": "Smiths"
   },
   "Kupfermine": {
    "de": "Kupfermine",
@@ -1081,7 +2027,18 @@
    "inputs": [],
    "outputs": [
     "Copper Ore"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 4,
+   "cost": "2 Timber and 2 Wattle & Daub",
+   "fx": "Health (-2)",
+   "tier": "Smiths"
   },
   "Drahtzwirbler": {
    "de": "Drahtzwirbler",
@@ -1093,7 +2050,18 @@
    ],
    "outputs": [
     "Torcs"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 3 Wattle & Daub",
+   "fx": "Prestige (+2) and Fire Safety (-2)",
+   "tier": "Smiths"
   },
   "Bronzeschmelzer": {
    "de": "Bronzeschmelzer",
@@ -1106,7 +2074,18 @@
    ],
    "outputs": [
     "Bronze"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 8,
+   "cost": "3 Timber and 2 Wattle & Daub",
+   "fx": "Fire Safety (-2)",
+   "tier": "Smiths"
   },
   "Schildschläger": {
    "de": "Schildschläger",
@@ -1119,7 +2098,18 @@
    ],
    "outputs": [
     "Ceremonial Shields"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Smiths",
+   "wclass_zh": "铁匠",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 14,
+   "cost": "2 Timber and 3 Wattle & Daub",
+   "fx": "Knowledge (+1) and Prestige (+1)",
+   "tier": "Smiths"
   },
   "Salzkrautsammler": {
    "de": "Salzkrautsammler",
@@ -1129,7 +2119,18 @@
    "inputs": [],
    "outputs": [
     "Saltwort"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    4,
+    8
+   ],
+   "denari": 8,
+   "cost": "1 Timber , 1 Wattle & Daub and 1 Granite",
+   "fx": [],
+   "tier": "Aldermen"
   },
   "Erdofen": {
    "de": "Erdofen",
@@ -1142,7 +2143,18 @@
    ],
    "outputs": [
     "Roast Beef"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 16,
+   "cost": "2 Timber , 2 Wattle & Daub and 1 Granite",
+   "fx": "Population (+1), Income (+1) and Fire Safety (-2)",
+   "tier": "Aldermen"
   },
   "Grünhände": {
    "de": "Grünhände",
@@ -1155,7 +2167,18 @@
    ],
    "outputs": [
     "Celtic Green"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 20,
+   "cost": "1 Timber , 2 Wattle & Daub and 1 Granite",
+   "fx": [],
+   "tier": "Aldermen"
   },
   "Birrusnäher": {
    "de": "Birrusnäher",
@@ -1168,7 +2191,18 @@
    ],
    "outputs": [
     "Cloaks"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 24,
+   "cost": "2 Timber , 2 Wattle & Daub and 1 Granite",
+   "fx": "Income (+2) and Health (+2)",
+   "tier": "Aldermen"
   },
   "Biberfänger": {
    "de": "Biberfänger",
@@ -1178,7 +2212,18 @@
    "inputs": [],
    "outputs": [
     "Beavers"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 8,
+   "cost": "3 Timber and 1 Wattle & Daub",
+   "fx": [],
+   "tier": "Aldermen"
   },
   "Salzkrautbrenner": {
    "de": "Salzkrautbrenner",
@@ -1190,7 +2235,18 @@
    ],
    "outputs": [
     "Saltwash"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 10,
+   "cost": "1 Timber , 2 Wattle & Daub and 1 Granite",
+   "fx": [],
+   "tier": "Aldermen"
   },
   "Bieberhutmacher": {
    "de": "Bieberhutmacher",
@@ -1203,7 +2259,18 @@
    ],
    "outputs": [
     "Fur Hats"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    3,
+    4
+   ],
+   "denari": 14,
+   "cost": "2 Timber , 2 Wattle & Daub and 1 Granite",
+   "fx": "Prestige (+1) and Happiness (-1)",
+   "tier": "Aldermen"
   },
   "Pferdefänger": {
    "de": "Pferdefänger",
@@ -1213,7 +2280,18 @@
    "inputs": [],
    "outputs": [
     "Ponies"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 8,
+   "cost": "1 Timber , 1 Wattle & Daub and 1 Granite",
+   "fx": [],
+   "tier": "Aldermen"
   },
   "Gestellbauer": {
    "de": "Gestellbauer",
@@ -1226,7 +2304,18 @@
    ],
    "outputs": [
     "Chassis"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 16,
+   "cost": "3 Timber , 1 Wattle & Daub and 1 Granite",
+   "fx": [],
+   "tier": "Aldermen"
   },
   "Wagenbauer": {
    "de": "Wagenbauer",
@@ -1239,7 +2328,18 @@
    ],
    "outputs": [
     "Chariots"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Aldermen",
+   "wclass_zh": "长者",
+   "size": [
+    6,
+    7
+   ],
+   "denari": 24,
+   "cost": "3 Timber , 1 Wattle & Daub and 2 Granite",
+   "fx": "Income (+1) and Prestige (+1)",
+   "tier": "Aldermen"
   },
   "Eselsmühle": {
    "de": "Eselsmühle",
@@ -1251,7 +2351,18 @@
    ],
    "outputs": [
     "Flour"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Mercators",
+   "wclass_zh": "商贾",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 8,
+   "cost": "1 Timber and 3 Tiles",
+   "fx": [],
+   "tier": "Mercators"
   },
   "Kräutergarten": {
    "de": "Kräutergarten",
@@ -1261,7 +2372,18 @@
    "inputs": [],
    "outputs": [
     "Herbs"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Waders",
+   "wclass_zh": "涉水者",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 6,
+   "cost": "1 Timber and 2 Tiles",
+   "fx": "Health (+1)",
+   "tier": "Mercators"
   },
   "Salsicium": {
    "de": "Salsicium",
@@ -1274,7 +2396,18 @@
    ],
    "outputs": [
     "Sausages"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Mercators",
+   "wclass_zh": "商贾",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 14,
+   "cost": "1 Timber and 2 Tiles",
+   "fx": "Population (+1), Income (+1) and Fire Safety (-2)",
+   "tier": "Mercators"
   },
   "Silbermine": {
    "de": "Silbermine",
@@ -1284,7 +2417,18 @@
    "inputs": [],
    "outputs": [
     "Silver Ore"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Mercators",
+   "wclass_zh": "商贾",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 10,
+   "cost": "2 Timber and 2 Tiles",
+   "fx": "Health (-2)",
+   "tier": "Mercators"
   },
   "Silberschmiede": {
    "de": "Silberschmiede",
@@ -1296,7 +2440,18 @@
    ],
    "outputs": [
     "Silver"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Mercators",
+   "wclass_zh": "商贾",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 8,
+   "cost": "1 Timber and 3 Tiles",
+   "fx": "Fire Safety (-2)",
+   "tier": "Mercators"
   },
   "Fibularium": {
    "de": "Fibularium",
@@ -1308,7 +2463,18 @@
    ],
    "outputs": [
     "Brooches"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Mercators",
+   "wclass_zh": "商贾",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 10,
+   "cost": "3 Timber and 2 Tiles",
+   "fx": "Population (+1), Income (+1) and Fire Safety (+2)",
+   "tier": "Mercators"
   },
   "Vogelfänger": {
    "de": "Vogelfänger",
@@ -1318,7 +2484,18 @@
    "inputs": [],
    "outputs": [
     "Small Birds"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 12,
+   "cost": "2 Timber , 1 Tiles and 1 Concrete",
+   "fx": [],
+   "tier": "Nobles"
   },
   "Zungenzieher": {
    "de": "Zungenzieher",
@@ -1330,7 +2507,18 @@
    ],
    "outputs": [
     "Bird Tongues"
-   ]
+   ],
+   "workers": 3,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    3,
+    5
+   ],
+   "denari": 16,
+   "cost": "3 Timber , 2 Tiles and 1 Concrete",
+   "fx": "Happiness (-2)",
+   "tier": "Nobles"
   },
   "Delicium": {
    "de": "Delicium",
@@ -1343,7 +2531,18 @@
    ],
    "outputs": [
     "Bord Tongues in Aspic"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    5,
+    6
+   ],
+   "denari": 22,
+   "cost": "2 Timber , 2 Tiles and 2 Concrete",
+   "fx": "Income (+1) and Happiness (+1)",
+   "tier": "Nobles"
   },
   "Haarnetzweber": {
    "de": "Haarnetzweber",
@@ -1356,7 +2555,18 @@
    ],
    "outputs": [
     "Head Piece"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 10,
+   "cost": "1 Timber , 2 Tiles and 2 Concrete",
+   "fx": [],
+   "tier": "Nobles"
   },
   "Perückenknüpfer": {
    "de": "Perückenknüpfer",
@@ -1369,7 +2579,18 @@
    ],
    "outputs": [
     "Wigs"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 16,
+   "cost": "2 Timber , 2 Tiles and 2 Concrete",
+   "fx": "Happiness (+1) and Fire Safety (-1)",
+   "tier": "Nobles"
   },
   "Kammmuschelzüchter": {
    "de": "Kammmuschelzüchter",
@@ -1379,7 +2600,18 @@
    "inputs": [],
    "outputs": [
     "Seashells"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    6,
+    9
+   ],
+   "denari": 20,
+   "cost": "2 Timber , 2 Tiles and 3 Concrete",
+   "fx": [],
+   "tier": "Nobles"
   },
   "Narcissium": {
    "de": "Narcissium",
@@ -1392,7 +2624,18 @@
    ],
    "outputs": [
     "Handmirrors"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 30,
+   "cost": "1 Timber , 2 Tiles and 3 Concrete",
+   "fx": "Happiness (+2) and Fire Safety (-2)",
+   "tier": "Nobles"
   },
   "Lehmziegelei": {
    "de": "Lehmziegelei",
@@ -1405,7 +2648,18 @@
    ],
    "outputs": [
     "Mud Bricks"
-   ]
+   ],
+   "workers": 2,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    2,
+    4
+   ],
+   "denari": 8,
+   "cost": "250 Denarii",
+   "fx": [],
+   "tier": ""
   },
   "Kalksteinmetz": {
    "de": "Kalksteinmetz",
@@ -1417,7 +2671,18 @@
    ],
    "outputs": [
     "Limestone Bricks"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 10,
+   "cost": "4 Mud Bricks",
+   "fx": "Health (-1)",
+   "tier": ""
   },
   "Sangahof": {
    "de": "Sangahof",
@@ -1427,7 +2692,18 @@
    "inputs": [],
    "outputs": [
     "Sanga Cattle"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 8,
+   "cost": "3 Mud Bricks and 2 Tiles",
+   "fx": "Health (-2)",
+   "tier": ""
   },
   "Dattelfarm": {
    "de": "Dattelfarm",
@@ -1437,7 +2713,18 @@
    "inputs": [],
    "outputs": [
     "Dates"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 6,
+   "cost": "3 Mud Bricks",
+   "fx": [],
+   "tier": ""
   },
   "Perlenmacher": {
    "de": "Perlenmacher",
@@ -1447,7 +2734,18 @@
    "inputs": [],
    "outputs": [
     "Beads"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 4,
+   "cost": "3 Mud Bricks",
+   "fx": [],
+   "tier": ""
   },
   "Perlenfädler": {
    "de": "Perlenfädler",
@@ -1459,7 +2757,18 @@
    ],
    "outputs": [
     "Wesekh Collars"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 8,
+   "cost": "3 Mud Bricks",
+   "fx": "Knowledge (+1)",
+   "tier": ""
   },
   "Haus der Kamele": {
    "de": "Haus der Kamele",
@@ -1469,7 +2778,18 @@
    "inputs": [],
    "outputs": [
     "Kamel"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 12,
+   "cost": "1 Mud Bricks and 3 Limestone Bricks",
+   "fx": "Health (-2)",
+   "tier": ""
   },
   "Wildgansjäger": {
    "de": "Wildgansjäger",
@@ -1479,7 +2799,18 @@
    "inputs": [],
    "outputs": [
     "Wild Geese"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 6,
+   "cost": "3 Mud Bricks",
+   "fx": [],
+   "tier": ""
   },
   "Gänsebräter": {
    "de": "Gänsebräter",
@@ -1492,7 +2823,18 @@
    ],
    "outputs": [
     "Stuffed Goose"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 14,
+   "cost": "3 Mud Bricks and 1 Limestone Bricks",
+   "fx": "Population (+1) and Fire Safety (-1)",
+   "tier": ""
   },
   "Köhler": {
    "de": "Köhler",
@@ -1502,7 +2844,18 @@
    "inputs": [],
    "outputs": [
     "Charcoal"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    5,
+    6
+   ],
+   "denari": 8,
+   "cost": "3 Mud Bricks",
+   "fx": "Health (-3) and Fire Safety (-3)",
+   "tier": ""
   },
   "Kohlemine": {
    "de": "Kohlemine",
@@ -1512,7 +2865,18 @@
    "inputs": [],
    "outputs": [
     "Charcoal"
-   ]
+   ],
+   "workers": 5,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    3,
+    8
+   ],
+   "denari": 12,
+   "cost": "2 Mud Bricks and 1 Tiles",
+   "fx": "Health (-2)",
+   "tier": ""
   },
   "Kollyrist": {
    "de": "Kollyrist",
@@ -1525,7 +2889,18 @@
    ],
    "outputs": [
     "Kollurion"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 10,
+   "cost": "2 Mud Bricks and 3 Limestone Bricks",
+   "fx": "Prestige (+1)",
+   "tier": ""
   },
   "Plissierer": {
    "de": "Plissierer",
@@ -1537,7 +2912,18 @@
    ],
    "outputs": [
     "Shentis"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    5,
+    6
+   ],
+   "denari": 10,
+   "cost": "3 Mud Bricks and 2 Limestone Bricks",
+   "fx": "Health (+1)",
+   "tier": ""
   },
   "Blaumischer": {
    "de": "Blaumischer",
@@ -1550,7 +2936,18 @@
    ],
    "outputs": [
     "Aegyptian Blue"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 20,
+   "cost": "1 Mud Bricks and 2 Limestone Bricks",
+   "fx": "Health (-2) and Fire Safety (-1)",
+   "tier": ""
   },
   "Kunstglasierer": {
    "de": "Kunstglasierer",
@@ -1563,7 +2960,18 @@
    ],
    "outputs": [
     "Apotropaic Talismans"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    5,
+    6
+   ],
+   "denari": 12,
+   "cost": "3 Mud Bricks and 2 Limestone Bricks",
+   "fx": "Income (+1) and Fire Safety (-1)",
+   "tier": ""
   },
   "Sesamfarm": {
    "de": "Sesamfarm",
@@ -1573,7 +2981,18 @@
    "inputs": [],
    "outputs": [
     "Sesame Pods"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    3,
+    3
+   ],
+   "denari": 4,
+   "cost": "2 Mud Bricks and 2 Limestone Bricks",
+   "fx": [],
+   "tier": ""
   },
   "Sesampresse": {
    "de": "Sesampresse",
@@ -1585,7 +3004,18 @@
    ],
    "outputs": [
     "Sesame Oil"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 16,
+   "cost": "2 Mud Bricks and 3 Limestone Bricks",
+   "fx": "Health (+1)",
+   "tier": ""
   },
   "Lampenformer": {
    "de": "Lampenformer",
@@ -1598,7 +3028,18 @@
    ],
    "outputs": [
     "Oil Lamps"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 14,
+   "cost": "2 Mud Bricks and 3 Limestone Bricks",
+   "fx": "Belief (+1), Knowledge (+1) and Fire Safety (-1)",
+   "tier": ""
   },
   "Kaykerei": {
    "de": "Kaykerei",
@@ -1611,7 +3052,18 @@
    ],
    "outputs": [
     "Kayk"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Chanters",
+   "wclass_zh": "祭司",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 22,
+   "cost": "2 Mud Bricks , 2 Limestone Bricks and 2 Granite",
+   "fx": "Happiness (+2)",
+   "tier": ""
   },
   "Lotusfarm": {
    "de": "Lotusfarm",
@@ -1621,7 +3073,18 @@
    "inputs": [],
    "outputs": [
     "Blue Lotus"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Chanters",
+   "wclass_zh": "祭司",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 4,
+   "cost": "2 Mud Bricks , 2 Limestone Bricks and 2 Granite",
+   "fx": "Prestige (+1) and Fire Safety (+1)",
+   "tier": ""
   },
   "Haus der Aufgüsse": {
    "de": "Haus der Aufgüsse",
@@ -1634,7 +3097,18 @@
    ],
    "outputs": [
     "Blue Lotus Tea"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Chanters",
+   "wclass_zh": "祭司",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 22,
+   "cost": "1 Mud Bricks , 1 Limestone Bricks and 4 Granite",
+   "fx": "Prestige (+2)",
+   "tier": ""
   },
   "Unguentarius": {
    "de": "Unguentarius",
@@ -1647,7 +3121,18 @@
    ],
    "outputs": [
     "Perfumed Oils"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Chanters",
+   "wclass_zh": "祭司",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 14,
+   "cost": "2 Mud Bricks , 2 Limestone Bricks and 2 Granite",
+   "fx": "Income (+1) and Happiness (+1)",
+   "tier": ""
   },
   "Tympanist": {
    "de": "Tympanist",
@@ -1660,7 +3145,18 @@
    ],
    "outputs": [
     "Sistrums"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Chanters",
+   "wclass_zh": "祭司",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 24,
+   "cost": "3 Mud Bricks , 1 Limestone Bricks and 2 Granite",
+   "fx": "Prestige (+1)",
+   "tier": ""
   },
   "Näherin": {
    "de": "Näherin",
@@ -1673,7 +3169,18 @@
    ],
    "outputs": [
     "Kalasirises"
-   ]
+   ],
+   "workers": 10,
+   "wclass": "Chanters",
+   "wclass_zh": "祭司",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 24,
+   "cost": "2 Mud Bricks , 1 Limestone Bricks and 3 Granite",
+   "fx": "Income (+1) and Belief (+1)",
+   "tier": ""
   },
   "Papyrusmacher": {
    "de": "Papyrusmacher",
@@ -1685,7 +3192,18 @@
    ],
    "outputs": [
     "Papyrus"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Scribes",
+   "wclass_zh": "书吏",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 12,
+   "cost": "2 Mud Bricks and 5 Tiles",
+   "fx": [],
+   "tier": ""
   },
   "Scriptorium": {
    "de": "Scriptorium",
@@ -1698,7 +3216,18 @@
    ],
    "outputs": [
     "Scribing Sets"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Scribes",
+   "wclass_zh": "书吏",
+   "size": [
+    3,
+    5
+   ],
+   "denari": 14,
+   "cost": "2 Mud Bricks and 2 Tiles",
+   "fx": "Income (+1), Knowledge (+1) and Fire Safety (-1)",
+   "tier": ""
   },
   "Großwildjäger": {
    "de": "Großwildjäger",
@@ -1708,7 +3237,18 @@
    "inputs": [],
    "outputs": [
     "Hippopotami"
-   ]
+   ],
+   "workers": 6,
+   "wclass": "Gymnasiarchs",
+   "wclass_zh": "体育官",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 12,
+   "cost": "3 Mud Bricks , 1 Tiles and 1 Concrete",
+   "fx": "Happiness (-1)",
+   "tier": ""
   },
   "Granatapfelplantage": {
    "de": "Granatapfelplantage",
@@ -1718,7 +3258,18 @@
    "inputs": [],
    "outputs": [
     "Pomegranates"
-   ]
+   ],
+   "workers": 4,
+   "wclass": "Threshers",
+   "wclass_zh": "拾穗者",
+   "size": [
+    4,
+    4
+   ],
+   "denari": 8,
+   "cost": "2 Mud Bricks , 3 Tiles and 1 Concrete",
+   "fx": "Knowledge (+1)",
+   "tier": ""
   },
   "Feinkostmetzger": {
    "de": "Feinkostmetzger",
@@ -1731,7 +3282,18 @@
    ],
    "outputs": [
     "Rare Meat Platters"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Gymnasiarchs",
+   "wclass_zh": "体育官",
+   "size": [
+    5,
+    5
+   ],
+   "denari": 16,
+   "cost": "2 Mud Bricks , 2 Tiles , 1 Concrete and 1 Mosaics",
+   "fx": "Income (+1) and Happiness (+1)",
+   "tier": ""
   },
   "Melikratonmischer": {
    "de": "Melikratonmischer",
@@ -1744,7 +3306,18 @@
    ],
    "outputs": [
     "Honeyed Milk"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Gymnasiarchs",
+   "wclass_zh": "体育官",
+   "size": [
+    4,
+    5
+   ],
+   "denari": 12,
+   "cost": "1 Mud Bricks , 4 Tiles and 2 Concrete",
+   "fx": "Population (+1)",
+   "tier": ""
   },
   "Kosmetiker": {
    "de": "Kosmetiker",
@@ -1757,7 +3330,18 @@
    ],
    "outputs": [
     "Milk of Poppea"
-   ]
+   ],
+   "workers": 8,
+   "wclass": "Gymnasiarchs",
+   "wclass_zh": "体育官",
+   "size": [
+    4,
+    6
+   ],
+   "denari": 16,
+   "cost": "2 Mud Bricks , 2 Tiles , 2 Concrete and 2 Mosaics",
+   "fx": "Prestige (+2)",
+   "tier": ""
   },
   "Kästchenmacher": {
    "de": "Kästchenmacher",
@@ -1770,7 +3354,18 @@
    ],
    "outputs": [
     "Ivory Caskets"
-   ]
+   ],
+   "workers": 12,
+   "wclass": "Gymnasiarchs",
+   "wclass_zh": "体育官",
+   "size": [
+    5,
+    8
+   ],
+   "denari": 30,
+   "cost": "1 Mud Bricks , 2 Tiles , 3 Concrete and 3 Mosaics",
+   "fx": "Belief (+1) and Prestige (+1)",
+   "tier": ""
   }
  },
  "goods": {
@@ -12817,5 +14412,260 @@
    "2397",
    "2531"
   ]
+ },
+ "residences": [
+  {
+   "id": "plebeian-residence",
+   "zh": "平民住宅",
+   "en": "Plebeian Residence",
+   "region": "latium",
+   "pop": 14.0,
+   "wf": 4.2,
+   "wclass": "Plebeian",
+   "wclass_zh": "平民",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 17
+  },
+  {
+   "id": "libertus-residence",
+   "zh": "自由民住宅",
+   "en": "Libertus Residence",
+   "region": "latium",
+   "pop": 6.0,
+   "wf": 3.0,
+   "wclass": "Libertus",
+   "wclass_zh": "自由民",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 8
+  },
+  {
+   "id": "eques-residence",
+   "zh": "骑士住宅",
+   "en": "Eques Residence",
+   "region": "latium",
+   "pop": 26.0,
+   "wf": 5.2,
+   "wclass": "Equites",
+   "wclass_zh": "骑士",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 32
+  },
+  {
+   "id": "patrician-residence",
+   "zh": "元老住宅",
+   "en": "Patrician Residence",
+   "region": "latium",
+   "pop": 43.0,
+   "wf": 4.3,
+   "wclass": "Patrician",
+   "wclass_zh": "元老",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 50
+  },
+  {
+   "id": "wader-residence",
+   "zh": "涉水者住宅",
+   "en": "Wader Residence",
+   "region": "albion",
+   "pop": 4.0,
+   "wf": 2.0,
+   "wclass": "Wader",
+   "wclass_zh": "涉水者",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 7
+  },
+  {
+   "id": "smith-residence",
+   "zh": "铁匠住宅",
+   "en": "Smith Residence",
+   "region": "albion",
+   "pop": 9.0,
+   "wf": 2.7,
+   "wclass": "Smith",
+   "wclass_zh": "铁匠",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 17
+  },
+  {
+   "id": "alderman-residence",
+   "zh": "长者住宅",
+   "en": "Alderman Residence",
+   "region": "albion",
+   "pop": 18.0,
+   "wf": 3.6,
+   "wclass": "Alderman",
+   "wclass_zh": "长者",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 31
+  },
+  {
+   "id": "mercator-residence",
+   "zh": "商贾住宅",
+   "en": "Mercator Residence",
+   "region": "albion",
+   "pop": 14.0,
+   "wf": 4.2,
+   "wclass": "Mercators",
+   "wclass_zh": "商贾",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 17
+  },
+  {
+   "id": "noble-residence",
+   "zh": "贵族住宅",
+   "en": "Noble Residence",
+   "region": "albion",
+   "pop": 24.0,
+   "wf": 4.8,
+   "wclass": "Nobles",
+   "wclass_zh": "贵族",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 31
+  },
+  {
+   "id": "thresher-residence",
+   "zh": "拾穗者住宅",
+   "en": "Thresher Residence",
+   "region": "aegyptus",
+   "pop": 5.0,
+   "wf": 2.5,
+   "wclass": "Thresher",
+   "wclass_zh": "拾穗者",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 6
+  },
+  {
+   "id": "potter-residence",
+   "zh": "陶工住宅",
+   "en": "Potter Residence",
+   "region": "aegyptus",
+   "pop": 12.0,
+   "wf": 3.6,
+   "wclass": "Potter",
+   "wclass_zh": "陶工",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 16
+  },
+  {
+   "id": "chanter-residence",
+   "zh": "祭司住宅",
+   "en": "Chanter Residence",
+   "region": "aegyptus",
+   "pop": 20.0,
+   "wf": 4.0,
+   "wclass": "Chanter",
+   "wclass_zh": "祭司",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 30
+  },
+  {
+   "id": "scribe-residence",
+   "zh": "书吏住宅",
+   "en": "Scribe Residence",
+   "region": "aegyptus",
+   "pop": 13.0,
+   "wf": 3.9,
+   "wclass": "Scribe",
+   "wclass_zh": "书吏",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 15
+  },
+  {
+   "id": "gymnasiarch-residence",
+   "zh": "体育官住宅",
+   "en": "Gymnasiarch Residence",
+   "region": "aegyptus",
+   "pop": 20.0,
+   "wf": 4.0,
+   "wclass": "Gymnasiarch",
+   "wclass_zh": "体育官",
+   "size": [
+    3,
+    3
+   ],
+   "needs": 29
+  }
+ ],
+ "wclass_zh": {
+  "Plebeians": "平民",
+  "Liberti": "自由民",
+  "Eques": "骑士",
+  "Equites": "骑士",
+  "Patricians": "元老",
+  "Waders": "涉水者",
+  "Smiths": "铁匠",
+  "Aldermen": "长者",
+  "Mercators": "商贾",
+  "Nobles": "贵族",
+  "Threshers": "拾穗者",
+  "Potter": "陶工",
+  "Chanters": "祭司",
+  "Scribes": "书吏",
+  "Gymnasiarchs": "体育官",
+  "Plebeian": "平民",
+  "Libertus": "自由民",
+  "Patrician": "元老",
+  "Wader": "涉水者",
+  "Smith": "铁匠",
+  "Alderman": "长者",
+  "Mercator": "商贾",
+  "Noble": "贵族",
+  "Thresher": "拾穗者",
+  "Chanter": "祭司",
+  "Scribe": "书吏",
+  "Gymnasiarch": "体育官"
+ },
+ "governor": {
+  "zh": "总督府",
+  "en": "Governor Villa",
+  "size": [
+   9,
+   11
+  ],
+  "radius": 36,
+  "street": 40,
+  "denari": -50,
+  "hp": 6500,
+  "cost": "1,000 第纳里 + 25 木材 + 5 瓦片（各地材料略有差异）",
+  "note": "总督居所与全岛声望、防务中心，可接待专家并享用其加成；影响所有建筑"
  }
 }

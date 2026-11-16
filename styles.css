@@ -707,3 +707,153 @@ body.cm-open{overflow:hidden}
   .chk{font-size:12px}
   .cat-meta{line-height:1.6}
 }
+
+/* ================= 卡牌品质：外围色环 ================= */
+.ctile,.cd-ico,.cico{--rv:#b6aa96}
+.ctile.rar-Common,.cd-ico.rar-Common,.cico.rar-Common{--rv:#b6aa96}
+.ctile.rar-Rare,.cd-ico.rar-Rare,.cico.rar-Rare{--rv:#4a86b8}
+.ctile.rar-Epic,.cd-ico.rar-Epic,.cico.rar-Epic{--rv:#8b5cf6}
+.ctile.rar-Legendary,.cd-ico.rar-Legendary,.cico.rar-Legendary{--rv:#cf9326}
+.ctile.rar-Heroic,.cd-ico.rar-Heroic,.cico.rar-Heroic{--rv:#c0432a}
+.ctile.rar-Unique,.cd-ico.rar-Unique,.cico.rar-Unique{--rv:#a83a8c}
+
+.ctile[class*="rar-"]{border-color:var(--rv);border-width:1px}
+.ctile.rar-Common{border-color:#ddd3c3}
+.ctile::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rv);
+  border-radius:12px 0 0 12px;opacity:.9;
+}
+.ctile.in-list::after{background:var(--rv)}
+.ctile .cico{border:2px solid var(--rv);background:#fff}
+.ctile .cico img{border-radius:7px}
+.cd-ico{border:2px solid var(--rv)}
+.rar-chip.rar-Common{color:#6b6357;border-color:#d8cfc0;background:#f7f3ec}
+.rar-chip.rar-Rare{color:#2f6188;border-color:#b9d2e4;background:#eef5fa}
+.rar-chip.rar-Epic{color:#6d3fbf;border-color:#cfbdf2;background:#f4efff}
+.rar-chip.rar-Legendary{color:#9a6a12;border-color:#e6d0a0;background:#fbf3e0}
+.rar-chip.rar-Heroic{color:#a5371f;border-color:#e8c1b6;background:#fbeee9}
+.rar-chip.rar-Unique{color:#8c3070;border-color:#e3bcd7;background:#fbeef7}
+
+/* ================= 岛屿规划 ================= */
+.plan-wrap{
+  max-width:1280px;margin:0 auto;padding:18px 24px 70px;
+  display:grid;grid-template-columns:296px minmax(0,1fr);gap:24px;align-items:start;
+}
+.plan-side{
+  position:sticky;top:14px;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;padding:16px;box-shadow:var(--shadow);
+}
+.ps-title{font-family:"Songti SC","Noto Serif SC",serif;font-size:18px;margin-bottom:12px}
+.ps-field{display:block;margin-bottom:14px;font-size:12px;color:var(--muted)}
+.ps-field > span{display:block;margin-bottom:6px;letter-spacing:.04em}
+.ps-field input[type=text]{
+  width:100%;margin-top:6px;font:inherit;font-size:13px;color:var(--ink);
+  background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:7px 9px;
+}
+.ps-tabs{flex-wrap:wrap}
+.ps-tabs button{font-size:12px;padding:5px 10px}
+.pg-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.pg-row select{
+  flex:1;min-width:0;font:inherit;font-size:12.5px;color:var(--ink);background:var(--panel);
+  border:1px solid var(--line);border-radius:8px;padding:6px 6px;
+}
+.pg-row input[type=number]{
+  width:64px;font:inherit;font-size:12.5px;text-align:right;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px;
+}
+.pg-row .unit{font-size:11px;color:var(--muted)}
+.pg-del{border:0;background:transparent;color:#b9ae9c;font-size:15px;cursor:pointer;padding:2px 4px;line-height:1}
+.pg-del:hover{color:var(--terra)}
+.ps-slider{display:block;margin:10px 0;font-size:12px;color:var(--muted)}
+.ps-slider input{width:100%;accent-color:var(--terra)}
+.ps-slider output{float:right;color:var(--ink);font-weight:700}
+.ps-field .chk{margin-top:8px}
+
+.plan-main{min-width:0}
+.plan-head h2{margin:0;font-family:"Songti SC","Noto Serif SC",serif;font-size:24px;letter-spacing:.02em}
+.plan-head p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.plan-head p b{color:var(--ink);font-size:15px}
+.plan-head .pill{
+  display:inline-block;margin-left:10px;font-size:11px;padding:2px 8px;border-radius:20px;
+  background:var(--terra-soft);color:var(--terra);font-weight:700;
+}
+.plan-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:10px;margin:16px 0 6px}
+.psum{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:10px 13px}
+.psum b{display:block;font-size:17px;font-family:"Times New Roman",Georgia,serif;line-height:1.25}
+.psum span{font-size:11px;color:var(--muted)}
+.plan-sec{margin-top:24px}
+.plan-sec h3{
+  margin:0 0 10px;font-size:15.5px;font-family:"Songti SC","Noto Serif SC",serif;
+  padding-bottom:7px;border-bottom:1px solid var(--line);
+}
+.ptab-wrap{overflow-x:auto}
+.ptab{width:100%;border-collapse:collapse;font-size:12.5px}
+.ptab th{
+  font-size:10.5px;font-weight:600;color:var(--muted);text-align:left;
+  padding:0 8px 6px;white-space:nowrap;letter-spacing:.04em;
+}
+.ptab th.r,.ptab td.r{text-align:right;font-variant-numeric:tabular-nums}
+.ptab td{padding:7px 8px;border-top:1px solid var(--line);vertical-align:middle}
+.ptab td em{font-style:normal;display:block;font-size:10.5px;color:var(--muted)}
+.ptab td .ok{color:var(--green)}
+.ptab .muted{color:var(--muted);font-size:11.5px}
+.pname{display:flex;align-items:center;gap:8px}
+.pname img{width:26px;height:26px;object-fit:contain;flex:0 0 auto}
+.pname b{font-weight:700}
+.ptab td.cards{min-width:180px}
+.cchip{
+  display:inline-block;font-size:10.5px;background:var(--bg-2);border:1px solid var(--line);
+  border-radius:6px;padding:2px 6px;margin:1px 3px 1px 0;color:var(--ink-2);white-space:nowrap;
+}
+.cchip b{color:var(--terra)}
+.plan-note{margin:8px 0 0;font-size:11.5px;color:var(--muted);line-height:1.65}
+.plan-svg-wrap{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;overflow:auto}
+.plan-svg{width:100%;height:auto;display:block;min-width:320px}
+.plan-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:11.5px;color:var(--muted)}
+.plan-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px;border:1px solid rgba(0,0,0,.08)}
+.plan-legend i.dash{background:none;border:1px dashed #a9432a;border-radius:50%}
+.plan-tips{margin:0;padding-left:18px;font-size:12.5px;line-height:1.75;color:var(--ink-2)}
+.plan-tips li{margin-bottom:7px}
+.plan-tips b{color:var(--ink)}
+
+@media (max-width:960px){
+  .plan-wrap{grid-template-columns:1fr;padding:14px 14px 50px;gap:16px}
+  .plan-side{position:static}
+  .plan-sum{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+}
+
+.plan-warn,.plan-ok{
+  margin:12px 0 0;padding:9px 13px;border-radius:10px;font-size:12.5px;line-height:1.6;
+}
+.plan-warn{background:var(--terra-soft);color:#8a3a24;border:1px solid #e8c4b7}
+.plan-ok{background:var(--green-soft);color:#28604a;border:1px solid #c2dccd}
+.plan-warn b,.plan-ok b{font-weight:700}
+
+/* 建筑清单：紧凑两行式 */
+.ptab-b{table-layout:auto}
+.ptab-b th:first-child{width:46%}
+.ptab-b td{padding:8px}
+.ptab-b .nowrap{white-space:nowrap}
+.pcard{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.pcard .cchip{margin:0;font-size:10px;padding:1px 5px}
+.ptab-b td em{font-size:10px}
+
+.plan-svg-wrap{max-height:640px}
+@media (max-width:720px){ .plan-svg-wrap{max-height:520px} }
+
+/* 品质只在描边体现，去掉左侧色条 */
+.ctile::after{display:none}
+.ctile{border-width:1.5px}
+
+/* 规划器：数字输入与移动端导航 */
+.ps-field > input[type=number]{
+  width:100%;margin-top:6px;font:inherit;font-size:13px;color:var(--ink);
+  background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:7px 9px;
+}
+@media (max-width:720px){
+  .viewtabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 14px 0}
+  .viewtabs button{min-width:0;padding:9px 11px}
+  .viewtabs button b{font-size:13px;line-height:1.25}
+  .viewtabs button span{font-size:10.5px;margin-top:3px;line-height:1.3;
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+}

@@ -11,6 +11,7 @@ BU = data['buildings']
 
 items = cards['items']
 cats = {c['id']: c for c in cards['cats']}
+RAR_ZH = {'Common': '普通', 'Rare': '稀有', 'Epic': '史诗', 'Legendary': '传奇', 'Heroic': '英雄', 'Unique': '独特'}
 RANK = {'Unique': 6, 'Heroic': 5, 'Legendary': 4, 'Epic': 3, 'Rare': 2, 'Common': 1}
 
 
@@ -42,7 +43,7 @@ def line(g):
             rows.append('%s %s' % (n, b))
     md = []
     md.append('### %s%s' % (name, '' if not en or en == name else ' · ' + en))
-    meta = ['稀有度：%s' % (rar or '—'), '作用：%s' % (tgt[0] if tgt else '—'),
+    meta = ['稀有度：%s' % (RAR_ZH.get(rar, rar) or '—'), '作用：%s' % (tgt[0] if tgt else '—'),
             '分类：%s' % cats.get(cat, {}).get('zh', '')]
     if vit:
         bs = bld_zh(vit)
