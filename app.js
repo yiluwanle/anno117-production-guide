@@ -123,6 +123,7 @@
     ['<b>' + CHAINS.length + '</b><span>条生产线</span>'],
     ['<b>' + REGIONS.length + '</b><span>个行省</span>'],
     ['<b>' + totalBuildings + '</b><span>栋建筑</span>'],
+    ['<b>' + ((window.ANNO_CARDS && window.ANNO_CARDS.meta.count) || 0) + '</b><span>张卡牌</span>'],
     ['<b>3.0</b><span>数据版本</span>']
   ].map((x) => '<div class="stat">' + x[0] + '</div>').join('');
 
@@ -432,7 +433,87 @@
     updateCount();
   }
 
-  /* ---------------- 卡牌选择弹层 ---------------- */
+  /* ================= 卡牌全库 ================= */
+  const CA = window.ANNO_CARDS || null;
+  const CI = (CA && CA.items) || {};          // guid -> [en,zh,rar,niche,cat,img,eff,cond,tgt,where,vit,de]
+  const CATS = (CA && CA.cats) || [];
+  const CGMAP = (CA && CA.card_guid) || {};   // vitablo 卡牌 id -> guid
+  const CAT_ZH = {};
+  CATS.forEach((c) => { CAT_ZH[c.id] = c.zh; });
+  const RANK = { Unique: 6, Heroic: 5, Legendary: 4, Epic: 3, Rare: 2, Common: 1 };
+  const GUID_KEYS = Object.keys(CI);
+
+  const cardName = (g) => (CI[g] ? (CI[g][1] || CI[g][0]) : g);
+  const isCheck = (v) => v === '✓' || v === '–' || v === '';
+
+  function effText(e) {
+    const v = e[1], p = e[2];
+    if (v === '✓' && (p === '✓' || !p)) return '';
+    if (v === '–' && p === '✓') return '（强化档）';
+    if (isCheck(v)) return '';
+    if (p && p !== v && !isCheck(p) && p !== '–') return v + '（强化 ' + p + '）';
+    return v;
+  }
+
+  // 效果摘要（用于列表/弹层）
+  function effLine(g, full) {
+    const r = CI[g];
+    if (!r) return '';
+    const eff = r[6] || [];
+    const parts = [];
+    const prod = eff.filter((e) => e[4] === 'Productivity')[0];
+    if (prod) {
+      const b = prod[1];
+      const p = prod[2] && prod[2] !== b && !isCheck(prod[2]) ? '（强化 ' + prod[2] + '）' : '';
+      parts.push('生产力 <b>' + b + '</b>' + p);
+    }
+    eff.filter((e) => e[4] !== 'Productivity').slice(0, full ? 99 : 1).forEach((e) => {
+      const t = effText(e);
+      parts.push(t ? e[0] + ' <b>' + t + '</b>' : e[0]);
+    });
+    return parts.join(' · ');
+  }
+
+  function prodOf(g) {
+    const r = CI[g];
+    if (!r) return null;
+    const p = (r[6] || []).filter((e) => e[4] === 'Productivity')[0];
+    if (!p) return null;
+    const n = (s) => {
+      const m = String(s).match(/-?\d+(?:[.,]\d+)?/);
+      return m ? parseFloat(m[0].replace(',', '.')) : 0;
+    };
+    return { base: n(p[1]), prod: n(p[2]), row: p };
+  }
+
+  /* ---------------- 我的清单（localStorage） ---------------- */
+  const WKEY = 'anno117.wishlist.v1';
+  let wish = {};
+  try { wish = JSON.parse(localStorage.getItem(WKEY) || '{}') || {}; } catch (e) { wish = {}; }
+  Object.keys(wish).forEach((g) => {
+    if (!CI[g]) { delete wish[g]; return; }
+    const o = wish[g] || {};
+    wish[g] = { n: Math.max(1, parseInt(o.n, 10) || 1), h: Math.max(0, parseInt(o.h, 10) || 0) };
+  });
+
+  function saveWish() {
+    try { localStorage.setItem(WKEY, JSON.stringify(wish)); } catch (e) { /* 忽略隐私模式 */ }
+    updateWishBadge();
+  }
+  function wishAdd(g) {
+    if (!CI[g]) return;
+    if (!wish[g]) wish[g] = { n: 1, h: 0 };
+    saveWish();
+  }
+  function wishCount() { return Object.keys(wish).length; }
+  function wishTodo() { return Object.keys(wish).filter((g) => wish[g].h < wish[g].n).length; }
+
+  function updateWishBadge() {
+    const el = document.getElementById('vtWish');
+    if (el) el.textContent = wishCount() ? (wishTodo() + ' 张待收集 · 共 ' + wishCount() + ' 张') : '还没添加卡牌';
+    const vc = document.getElementById('vtCards');
+    if (vc && CA) vc.textContent = CA.meta.count + ' 张卡牌 · 效果明细';
+  }
   const cm = document.getElementById('cardModal');
   const cmTitle = document.getElementById('cmTitle');
   const cmSub = document.getElementById('cmSub');
@@ -461,9 +542,12 @@
       const c = CARDS[id];
       const on = sel.includes(id);
       const dis = !on && sel.length >= CARD_MAX;
+      const g = CGMAP[id];
+      const eff = g ? effLine(g, false) : (c.kind === 'research' ? '<span class="cm-eff">研究解锁项目 · 不可插入建筑</span>' : '');
       return '<button class="cm-row' + (on ? ' sel' : '') + (dis ? ' dis' : '') + '" data-pick="' + id + '">' +
         cardMark(c) +
-        '<span class="cm-name"><b>' + esc(c.zh) + '</b><em>' + esc(c.de) + '</em></span>' +
+        '<span class="cm-name"><b>' + esc(c.zh) + '</b><em>' + esc(c.de) + '</em>' +
+        (eff ? '<span class="cm-eff">' + eff + '</span>' : '') + '</span>' +
         '<span class="cm-val"><b class="' + (state.cardQ === 'base' ? 'cur' : '') + '">' + fmtVal(c.base) + '</b>' +
         '<i class="' + (state.cardQ === 'prod' ? 'cur' : '') + '">' + fmtVal(c.prod) + '</i></span>' +
         '<span class="cm-chk">' + (on ? '✓' : '') + '</span>' +
@@ -537,6 +621,345 @@
     if (e.key === 'Escape' && !cm.hidden) closeCardModal();
   });
 
+  /* ================= 视图切换 ================= */
+  const viewChains = document.getElementById('viewChains');
+  const viewCards = document.getElementById('viewCards');
+  const viewWish = document.getElementById('viewWish');
+  const viewTabs = document.getElementById('viewTabs');
+  let curView = 'chains';
+
+  function setView(v) {
+    if (!['chains', 'cards', 'wish'].includes(v)) v = 'chains';
+    curView = v;
+    viewChains.hidden = v !== 'chains';
+    viewCards.hidden = v !== 'cards';
+    viewWish.hidden = v !== 'wish';
+    [...viewTabs.children].forEach((b) => b.classList.toggle('active', b.dataset.v === v));
+    if (v === 'cards') renderCatalog();
+    if (v === 'wish') renderWish();
+    const p = new URLSearchParams(location.search);
+    if (v === 'chains') p.delete('view'); else p.set('view', v);
+    const qs = p.toString();
+    history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  }
+  viewTabs.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-v]');
+    if (b) setView(b.dataset.v);
+  });
+
+  /* ================= 卡牌图鉴 ================= */
+  const catCats = document.getElementById('catCats');
+  const catSearch = document.getElementById('catSearch');
+  const catProdOnly = document.getElementById('catProdOnly');
+  const catMeta = document.getElementById('catMeta');
+  const cgrid = document.getElementById('cgrid');
+  const catMore = document.getElementById('catMore');
+  const catState = { cat: 'all', q: '', prodOnly: false, limit: 72 };
+
+  function catCounts() {
+    const m = {};
+    GUID_KEYS.forEach((g) => { const c = CI[g][4]; m[c] = (m[c] || 0) + 1; });
+    return m;
+  }
+  function buildCatTabs() {
+    const n = catCounts();
+    catCats.innerHTML = '<button data-c="all" class="' + (catState.cat === 'all' ? 'active' : '') + '">全部 ' +
+      GUID_KEYS.length + '</button>' +
+      CATS.map((c) => '<button data-c="' + c.id + '" class="' + (catState.cat === c.id ? 'active' : '') + '">' +
+        esc(c.zh) + ' ' + (n[c.id] || 0) + '</button>').join('');
+  }
+
+  function catFiltered() {
+    const q = catState.q;
+    return GUID_KEYS.filter((g) => {
+      const r = CI[g];
+      if (catState.cat !== 'all' && r[4] !== catState.cat) return false;
+      if (catState.prodOnly && !prodOf(g)) return false;
+      if (!q) return true;
+      const hay = [r[0], r[1], r[11], CAT_ZH[r[4]] || '', r[8].join(' ')]
+        .concat((r[6] || []).map((e) => e[0] + ' ' + e[4] + ' ' + e[1])).join(' ').toLowerCase();
+      return hay.includes(q);
+    }).sort((a, b) => {
+      const ra = CI[a], rb = CI[b];
+      const ca = CATS.findIndex((c) => c.id === ra[4]);
+      const cb = CATS.findIndex((c) => c.id === rb[4]);
+      if (ca !== cb) return ca - cb;
+      const dr = (RANK[rb[2]] || 0) - (RANK[ra[2]] || 0);
+      if (dr) return dr;
+      return cardName(a).localeCompare(cardName(b), 'zh');
+    });
+  }
+
+  function tileHTML(g) {
+    const r = CI[g];
+    const inList = !!wish[g];
+    const prod = prodOf(g);
+    const head = prod ? '生产力 <b>' + prod.row[1] + '</b>' + (prod.row[2] && prod.row[2] !== prod.row[1] && !isCheck(prod.row[2]) ? ' / ' + prod.row[2] : '') : effLine(g, false);
+    return '<div class="ctile' + (inList ? ' in-list' : '') + '" data-cd="' + g + '" role="button" tabindex="0">' +
+      '<span class="cico">' + imgTag(r[5], '', cardName(g)) + '<i>' + esc((cardName(g) || '?').slice(0, 1)) + '</i></span>' +
+      '<span class="ctxt">' +
+        '<span class="cname">' + esc(cardName(g)) + '</span>' +
+        '<span class="csub"><i class="rar-chip r-' + esc(r[2] || 'Common') + '">' + esc(r[2] || '—') + '</i> ' +
+          esc(CAT_ZH[r[4]] || '') + ' · ' + esc(r[8][0] || '—') + '</span>' +
+        '<span class="ceff">' + (head || '—') + '</span>' +
+      '</span>' +
+      (inList
+        ? '<span class="added" title="已在清单，需要 ' + wish[g].n + ' 张">清单 ' + wish[g].n + '</span>'
+        : '<button class="cadd" data-add="' + g + '" title="加入我的清单">＋</button>') +
+      '</div>';
+  }
+
+  function renderCatalog() {
+    buildCatTabs();
+    const list = catFiltered();
+    const show = list.slice(0, catState.limit);
+    cgrid.innerHTML = show.map(tileHTML).join('');
+    catMore.hidden = list.length <= show.length;
+    if (!list.length) {
+      cgrid.innerHTML = '<div class="wish-empty" style="grid-column:1/-1"><b>没有匹配的卡牌</b>换个关键词，或切换分类看看</div>';
+    }
+    const prodN = list.filter((g) => prodOf(g)).length;
+    catMeta.innerHTML = '共 <b>' + list.length + '</b> 张' +
+      (catState.cat !== 'all' ? '（' + esc(CAT_ZH[catState.cat]) + '：' + esc((CATS.find((c) => c.id === catState.cat) || {}).sub || '') + '）' : '') +
+      ' · 其中带生产力加成 <em>' + prodN + '</em> 张 · 已加入清单 <b>' + list.filter((g) => wish[g]).length + '</b> 张' +
+      (list.length > show.length ? ' · 已显示前 ' + show.length + ' 张' : '');
+  }
+
+  catCats.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-c]');
+    if (!b) return;
+    catState.cat = b.dataset.c;
+    catState.limit = 72;
+    renderCatalog();
+  });
+  let catTimer = null;
+  catSearch.addEventListener('input', () => {
+    clearTimeout(catTimer);
+    catTimer = setTimeout(() => {
+      catState.q = catSearch.value.trim().toLowerCase();
+      catState.limit = 72;
+      renderCatalog();
+    }, 140);
+  });
+  catProdOnly.addEventListener('change', () => {
+    catState.prodOnly = catProdOnly.checked;
+    catState.limit = 72;
+    renderCatalog();
+  });
+  catMore.addEventListener('click', () => { catState.limit += 96; renderCatalog(); });
+
+  /* ---------------- 卡牌详情弹层 ---------------- */
+  const cd = document.getElementById('cardDetail');
+  const cdIco = document.getElementById('cdIco');
+  const cdName = document.getElementById('cdName');
+  const cdMeta = document.getElementById('cdMeta');
+  const cdBody = document.getElementById('cdBody');
+  const cdSum = document.getElementById('cdSum');
+  const cdAdd = document.getElementById('cdAdd');
+  let cdGuid = null;
+
+  function renderDetail() {
+    const g = cdGuid, r = CI[g];
+    if (!r) return;
+    cdIco.innerHTML = imgTag(r[5], '', cardName(g)) + '<i style="font-size:18px;color:#867a6a">' + esc((cardName(g) || '?').slice(0, 1)) + '</i>';
+    cdName.textContent = cardName(g);
+    cdMeta.innerHTML = '<i class="rar-chip r-' + esc(r[2] || 'Common') + '">' + esc(r[2] || '—') + '</i> ' +
+      (r[1] ? '<em>' + esc(r[0]) + '</em>' : '') + (r[3] ? ' · ' + esc(r[3]) : '') + ' · ' + esc(CAT_ZH[r[4]] || '');
+
+    let html = '';
+    const eff = r[6] || [];
+    if (eff.length) {
+      html += '<div class="cd-sec"><h4>效果</h4><table class="cd-eff"><thead><tr><th>效果</th><th>普通</th><th>强化</th></tr></thead><tbody>' +
+        eff.map((e) => {
+          const hl = e[4] === 'Productivity' ? ' class="hl"' : '';
+          const same = isCheck(e[1]) || e[2] === e[1] || e[2] === '–' || !e[2];
+          return '<tr' + hl + '><td>' + esc(e[0]) + '</td><td class="v">' + esc(e[1] || '—') + '</td>' +
+            '<td class="v">' + (same ? '—' : esc(e[2])) + '</td></tr>';
+        }).join('') + '</tbody></table></div>';
+    }
+    if (r[7]) html += '<div class="cd-sec"><h4>强化条件</h4><p class="cd-note">' + esc(r[7]) + '</p></div>';
+    if (r[8] && r[8].length) {
+      html += '<div class="cd-sec"><h4>作用对象</h4><div class="cd-tags">' +
+        r[8].map((t) => '<span class="cd-tag">' + esc(t) + '</span>').join('') + '</div></div>';
+    }
+    if (r[9]) html += '<div class="cd-sec"><h4>获取方式</h4><p class="cd-note">' + esc(r[9]) + '</p></div>';
+    const vit = r[10];
+    if (vit && CARDS[vit]) {
+      const bn = Object.keys(CB).filter((k) => CB[k].includes(vit))
+        .map((k) => {
+          const de = k.split('|')[1];
+          return (D.buildings[de] && D.buildings[de].zh) || de;
+        }).slice(0, 8);
+      if (bn.length) {
+        html += '<div class="cd-sec"><h4>生产线可用建筑</h4><div class="cd-tags">' +
+          bn.map((x) => '<span class="cd-tag">' + esc(x) + '</span>').join('') + '</div></div>';
+      }
+    }
+    cdBody.innerHTML = html;
+    const prod = prodOf(g);
+    cdSum.innerHTML = prod
+      ? '生产力加成：<b>' + prod.row[1] + '</b>' + (prod.row[2] && prod.row[2] !== prod.row[1] && !isCheck(prod.row[2]) ? ' → <b>' + prod.row[2] + '</b>（强化）' : '')
+      : '这张卡不提供生产力加成';
+    cdAdd.textContent = wish[g] ? '已在清单 · 点击移除' : '加入我的清单';
+    cdAdd.classList.toggle('on', !!wish[g]);
+  }
+
+  function openDetail(g) {
+    if (!CI[g]) return;
+    cdGuid = g;
+    renderDetail();
+    cd.hidden = false;
+    document.body.classList.add('cm-open');
+  }
+  function closeDetail() {
+    cdGuid = null;
+    cd.hidden = true;
+    document.body.classList.remove('cm-open');
+  }
+
+  cgrid.addEventListener('click', (e) => {
+    const add = e.target.closest('[data-add]');
+    if (add) {
+      e.stopPropagation();
+      wishAdd(add.dataset.add);
+      saveWish();
+      renderCatalog();
+      return;
+    }
+    const b = e.target.closest('[data-cd]');
+    if (b) openDetail(b.dataset.cd);
+  });
+  cgrid.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const b = e.target.closest('[data-cd]');
+    if (b) { e.preventDefault(); openDetail(b.dataset.cd); }
+  });
+  cd.addEventListener('click', (e) => {
+    if (e.target.closest('[data-cd-close]')) { closeDetail(); return; }
+    if (e.target.closest('#cdAdd') && cdGuid) {
+      if (wish[cdGuid]) delete wish[cdGuid]; else wishAdd(cdGuid);
+      saveWish();
+      renderDetail();
+      renderCatalog();
+      if (curView === 'wish') renderWish();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !cd.hidden) closeDetail();
+  });
+
+  /* ================= 我的卡牌清单 ================= */
+  const wishStats = document.getElementById('wishStats');
+  const wishBody = document.getElementById('wishBody');
+
+  function renderWish() {
+    const gs = Object.keys(wish);
+    const totalNeed = gs.reduce((a, g) => a + wish[g].n, 0);
+    const totalHave = gs.reduce((a, g) => a + Math.min(wish[g].h, wish[g].n), 0);
+    const done = gs.filter((g) => wish[g].h >= wish[g].n).length;
+    const pct = gs.length ? Math.round(done / gs.length * 100) : 0;
+    wishStats.innerHTML = [
+      ['<b>' + gs.length + '</b><span>张卡牌在清单</span>'],
+      ['<b>' + totalHave + ' / ' + totalNeed + '</b><span>已收集 / 需要</span>', totalNeed && totalHave >= totalNeed ? 'ok' : ''],
+      ['<b>' + done + '</b><span>已集齐</span>', done ? 'ok' : ''],
+      ['<b>' + pct + '%</b><span>完成度</span>']
+    ].map((x) => '<div class="wstat ' + (x[1] || '') + '">' + x[0] + '</div>').join('');
+
+    if (!gs.length) {
+      wishBody.innerHTML = '<div class="wish-empty"><b>清单还是空的</b>' +
+        '去「卡牌图鉴」点开任意一张卡，选择「加入我的清单」，这里就会按建筑类型分组显示，并记录需要数量与收集进度。</div>';
+      return;
+    }
+    const groups = {};
+    gs.forEach((g) => {
+      const c = CI[g][4];
+      (groups[c] = groups[c] || []).push(g);
+    });
+    wishBody.innerHTML = CATS.filter((c) => groups[c.id]).map((c) => {
+      const list = groups[c.id].sort((a, b) => {
+        const dr = (RANK[CI[b][2]] || 0) - (RANK[CI[a][2]] || 0);
+        return dr || cardName(a).localeCompare(cardName(b), 'zh');
+      });
+      const doneN = list.filter((g) => wish[g].h >= wish[g].n).length;
+      const needN = list.reduce((a, g) => a + wish[g].n, 0);
+      return '<div class="wgroup"><div class="wgroup-head"><h3>' + esc(c.zh) + '</h3>' +
+        '<span>' + esc(c.sub) + '</span>' +
+        '<span class="pg">' + list.length + ' 张 · 共需 ' + needN + ' · 已集齐 ' + doneN + '/' + list.length + '</span></div>' +
+        list.map(wishRow).join('') + '</div>';
+    }).join('');
+  }
+
+  function wishRow(g) {
+    const r = CI[g], w = wish[g];
+    const done = w.h >= w.n;
+    const eff = effLine(g, false);
+    return '<div class="wrow" data-g="' + g + '">' +
+      '<span class="wico">' + imgTag(r[5], '', cardName(g)) + '</span>' +
+      '<span class="wname"><b>' + esc(cardName(g)) + '</b><em>' + esc(r[0]) + ' · ' + esc(r[8][0] || '') + '</em></span>' +
+      '<span class="weff">' + (eff || '—') + '</span>' +
+      '<span class="wneed">' +
+        '<span class="stepper" data-role="need"><span class="lab">需要</span>' +
+          '<button data-step="-1">−</button><span class="num">' + w.n + '</span><button data-step="1">＋</button></span>' +
+        '<span class="stepper" data-role="have"><span class="lab">已有</span>' +
+          '<button data-step="-1">−</button><span class="num">' + w.h + '</span><button data-step="1">＋</button></span>' +
+      '</span>' +
+      '<span class="wstate ' + (done ? 'done' : 'todo') + '">' + (done ? '已完成' : '缺 ' + (w.n - w.h) + ' 张') + '</span>' +
+      '<button class="wdel" title="从清单移除">×</button>' +
+      '</div>';
+  }
+
+  wishBody.addEventListener('click', (e) => {
+    const row = e.target.closest('.wrow');
+    if (!row) return;
+    const g = row.dataset.g;
+    if (!wish[g]) return;
+    if (e.target.closest('.wdel')) {
+      delete wish[g];
+      saveWish();
+      renderWish();
+      renderCatalog();
+      return;
+    }
+    const st = e.target.closest('[data-step]');
+    if (!st) return;
+    const role = st.closest('[data-role]').dataset.role;
+    const d = Number(st.dataset.step);
+    const cur = wish[g];
+    if (role === 'need') cur.n = Math.max(1, Math.min(99, cur.n + d));
+    else cur.h = Math.max(0, Math.min(cur.n, cur.h + d));
+    if (cur.h > cur.n) cur.n = cur.h;
+    saveWish();
+    renderWish();
+  });
+
+  document.getElementById('wishClear').addEventListener('click', () => {
+    if (!Object.keys(wish).length) return;
+    if (!confirm('确定清空整份卡牌清单吗？此操作不可撤销。')) return;
+    wish = {};
+    saveWish();
+    renderWish();
+    renderCatalog();
+  });
+
+  document.getElementById('wishExport').addEventListener('click', () => {
+    const gs = Object.keys(wish);
+    if (!gs.length) return;
+    const rows = [['分类', '卡牌', '英文名', '稀有度', '作用对象', '需要', '已有', '状态']];
+    CATS.forEach((c) => {
+      gs.filter((g) => CI[g][4] === c.id).forEach((g) => {
+        const r = CI[g], w = wish[g];
+        rows.push([c.zh, cardName(g), r[0], r[2] || '', r[8][0] || '', w.n, w.h, w.h >= w.n ? '已完成' : '未完成']);
+      });
+    });
+    const csv = '\ufeff' + rows.map((r) => r.map((x) => '"' + String(x).replace(/"/g, '""') + '"').join(',')).join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    a.download = '纪元117-卡牌清单.csv';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  });
+
   // 初次同步 URL 状态到控件
   [...modeSeg.children].forEach((x) => x.classList.toggle('active', x.dataset.mode === state.mode));
   search.value = state.q;
@@ -549,4 +972,10 @@
 
   buildTierChips();
   render();
+  updateWishBadge();
+  if (params.get('view')) setView(params.get('view'));
+  if (params.get('card') && CI[params.get('card')]) {
+    if (!params.get('view')) setView('cards');
+    openDetail(params.get('card'));
+  }
 })();
