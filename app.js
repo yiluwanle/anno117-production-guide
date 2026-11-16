@@ -66,19 +66,39 @@
     return base * aqua;
   }
 
-  // 寻找最小整数配比：返回 {k, ints} 或 null
-  function niceScale(counts) {
-    for (let k = 1; k <= 8; k++) {
-      let ok = true, ints = [];
-      for (const v of counts) {
-        const x = v * k;
-        const r = Math.round(x);
-        if (r < 1 || Math.abs(x - r) > 0.06 * Math.max(1, r)) { ok = false; break; }
-        ints.push(r);
+  // 归整配比：把「每 1 单位成品」的小数座数换成一整套整数座数
+  // 返回 {ints, cap, maxWaste, k}；cap = 这组座数实际能产多少/分（瓶颈段决定）
+  function roundRatio(rows) {
+    const counts = rows.map((r) => r.count);
+    const outs = rows.map((r) => r.out);
+    const capOf = (ints) => Math.min.apply(null, ints.map((n, i) => n * outs[i]));
+    const wasteOf = (ints, cap) => Math.max.apply(null, ints.map((n, i) => n * outs[i] / cap - 1));
+    // 先在「总数 ≤16 座」里找：数字小、好记
+    const scan = (maxSum) => {
+      let best = null;
+      for (let k = 1; k <= 8; k++) {
+        const ints = counts.map((v) => Math.round(v * k));
+        if (ints.some((n) => n < 1)) continue;
+        if (ints.reduce((a, b) => a + b, 0) > maxSum) continue;
+        const cap = capOf(ints);
+        const w = wasteOf(ints, cap);
+        const score = w + k * 0.015;                        // 轻微偏好小倍数
+        if (!best || score < best.score) best = { ints, cap, maxWaste: w, k, score };
       }
-      if (ok) return { k, ints };
+      return best;
+    };
+    let best = scan(16);
+    // 段数多 / 加成后比例太碎时，富余会很大：放宽到 40 座换更贴合的配比
+    if (!best || best.maxWaste > 0.6) {
+      const wide = scan(40);
+      if (wide && (!best || wide.maxWaste < best.maxWaste - 0.15)) best = wide;
     }
-    return null;
+    if (!best) {                                            // 兜底：逐段向上取整
+      const ints = counts.map((v) => Math.max(1, Math.ceil(v - 1e-9)));
+      const cap = capOf(ints);
+      best = { ints, cap, maxWaste: wasteOf(ints, cap), k: 1 };
+    }
+    return best;
   }
 
   function solve(chain, mode, n, global, withCards) {
@@ -195,13 +215,14 @@
   }
 
   function flowHTML(chain, rows) {
+    const rrFlow = roundRatio(rows);
     const tokens = [];
     const made = new Set();
-    rows.forEach((r) => {
+    rows.forEach((r, ri) => {
       const s = r.s;
       const missing = (s.inputs || []).filter((g) => !made.has(g));
       missing.forEach((g) => tokens.push({ t: 'g', en: g, v: gname(g) }));
-      tokens.push({ t: 'b', zh: s.zh, en: s.en, n: r.count, coal: (s.flags || []).includes('coal') });
+      tokens.push({ t: 'b', zh: s.zh, en: s.en, n: r.count, nk: rrFlow.ints[ri], coal: (s.flags || []).includes('coal') });
       (s.outputs || []).forEach((g) => { made.add(g); tokens.push({ t: 'g', en: g, v: gname(g), out: true }); });
     });
     // 去掉紧邻重复的商品
@@ -214,40 +235,37 @@
     return '<div class="flow">' + clean.map((tk, i) => {
       const piece = tk.t === 'g'
         ? '<span class="node good" title="' + esc(tk.en) + '">' + imgTag(goodImg(tk.en), 'ic', tk.v) + esc(tk.v) + '</span>'
-        : '<span class="node bld" title="' + esc(tk.en) + '">' + esc(tk.zh) + ' <b>×' + fmt(tk.n) + '</b></span>';
+        : '<span class="node bld" title="' + esc(tk.en) + ' · 理论 ' + fmt(tk.n) + ' 座">' + esc(tk.zh) + ' <b>×' + tk.nk + '</b></span>';
       return (i ? '<span class="arrow">›</span>' : '') + piece;
-    }).join('') + '</div>';
+    }).join('') +
+      '<span class="flow-chip">整套约 ' + fmt(rrFlow.cap) + ' 个/分</span></div>';
   }
 
   function notesHTML(chain, rows, rowsNone) {
     const notes = [];
     // 整数配比：无加成 / 当前情景
     const ratioNote = (rws, label, cls) => {
-      const ns = niceScale(rws.map((r) => r.count));
-      if (ns) {
-        notes.push({
-          cls: cls, ico: '配',
-          html: label + '：每 <b>' + ns.k + '</b> 座 <b>' + esc(chain.good_zh) + '</b> → ' +
-            rws.map((r, i) => esc(r.s.zh) + ' <b>' + ns.ints[i] + '</b>').join(' · ')
-        });
-      } else {
-        notes.push({
-          cls: cls, ico: '配',
-          html: label + '：' + rws.map((r) => esc(r.s.zh) + ' <b>' + fmt(r.count) + '</b>').join(' · ') +
-            '（含小数，施工向上取整即可，多出的上游产能可关停或外销）'
-        });
-      }
+      const rr = roundRatio(rws);
+      if (!rr) return;
+      const parts = rws.map((r, i) => esc(r.s.zh) + ' <b>' + rr.ints[i] + '</b>');
+      const pct = Math.round(rr.maxWaste * 100);
+      notes.push({
+        cls: cls, ico: '配',
+        html: label + '：' + parts.join(' · ') + ' → 约 <b>' + fmt(rr.cap) + '</b> ' + esc(chain.good_zh) + '/分' +
+          (pct >= 15 ? '（上游富余 ≤' + pct + '%，多建的可关停或外销）' : '')
+      });
     };
     ratioNote(rowsNone, '无加成配比', '');
     if (state.mode !== 'none') ratioNote(rows, MODE_ZH[state.mode] + '配比', 'warn');
     // 水源
-    rows.forEach((r) => {
+    const rrNow = roundRatio(rows), rrNone = roundRatio(rowsNone);
+    rows.forEach((r, ri) => {
       if (r.s.bonus.aqua && state.mode !== 'none') {
-        const n0 = rowsNone.find((x) => x.s === r.s);
+        const a = rrNone.ints[ri], b = rrNow.ints[ri];
         notes.push({
           cls: 'warn', ico: '水',
           html: '<b>' + esc(r.s.zh) + '</b> 接通输水道：基础周期 <b>' + mmss(r.s.time) + '</b> → <b>' + mmss(r.eff) + '</b>，生产力 <b>' + Math.round(r.p) + '%</b>' +
-            (n0 && r.count < n0.count - 0.005 ? '，数量从 <b>' + fmt(n0.count) + '</b> 降到 <b>' + fmt(r.count) + '</b>' : '')
+            (a > b ? '，整套配比从 <b>' + a + '</b> 座降到 <b>' + b + '</b> 座' : '')
         });
       }
     });
@@ -255,9 +273,10 @@
     const coalRows = rows.filter((r) => (r.s.flags || []).includes('coal'));
     if (coalRows.length) {
       const total = coalRows.reduce((a, r) => a + r.count, 0);
+      const mines = Math.max(1, Math.ceil(total / 4 - 1e-9));
       notes.push({
         cls: 'fuel', ico: '煤',
-        html: '燃煤建筑共 <b>' + fmt(total) + '</b> 栋，需煤 <b>' + fmt(total * 0.5) + '</b> 吨/分，约 <b>' + fmt(total / 4) + '</b> 座煤矿或炭窑（1 座供养 4 栋）'
+        html: '燃煤建筑共 <b>' + fmt(total) + '</b> 栋，需煤 <b>' + fmt(total * 0.5) + '</b> 吨/分，至少 <b>' + mines + '</b> 座煤矿或炭窑（1 座供养 4 栋）'
       });
     }
     // 总建筑数对比
@@ -267,8 +286,8 @@
       const pct = Math.round((sumNow - sumNone) / sumNone * 100);
       notes.push({
         cls: '', ico: '差',
-        html: '整条链建筑数：无加成 <b>' + fmt(sumNone) + '</b> 座 → 当前 <b>' + fmt(sumNow) + '</b> 座（' +
-          (pct < 0 ? '少 ' : '多 ') + Math.abs(pct) + '%）'
+        html: '整条链理论栋数（每 1 座成品）：无加成 <b>' + fmt(sumNone) + '</b> 座 → 当前 <b>' + fmt(sumNow) + '</b> 座（' +
+          (pct < 0 ? '少 ' : '多 ') + Math.abs(pct) + '%），实际按上面的整套配比凑整'
       });
     }
     return '<div class="notes">' + notes.map((x) =>
@@ -359,7 +378,9 @@
       '</div>' +
       flowHTML(chain, rows) +
       '<table><thead><tr>' +
-        '<th>建筑</th><th>基础周期</th><th>产出/分</th><th>无加成</th><th>' + MODE_ZH[state.mode] + '</th><th>变化</th>' +
+        '<th>建筑</th><th>基础周期</th><th title="每栋每分钟产出（含加成）">产出/分</th>' +
+        '<th title="每 1 座成品所需栋数的理论值，实际按下方「整套配比」凑整">无加成</th>' +
+        '<th title="每 1 座成品所需栋数的理论值，实际按下方「整套配比」凑整">' + (state.mode === 'none' ? '当前' : MODE_ZH[state.mode]) + '</th><th>变化</th>' +
       '</tr></thead><tbody>' + trs + '</tbody></table>' +
       notesHTML(chain, rows, rowsNone) +
       recipeHTML(chain, rows) +

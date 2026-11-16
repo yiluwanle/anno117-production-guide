@@ -88,8 +88,16 @@
         row.n += n;
         if (row.goods.indexOf(chain.good_zh) < 0) row.goods.push(chain.good_zh);
       });
-      targets.push({ chain: chain, rate: rate, actual: cap, fin: fin.n * fin.rpb, stages: stages });
+      targets.push({ chain: chain, rate: rate, actual: cap, fin: fin.n * fin.rpb, stages: stages, alt: altOf(stages, cap) });
     });
+
+    // 瓶颈段少建 1 座时的产能，用于「凑整参考」
+    function altOf(stages, cap) {
+      const bn = stages.filter((x) => Math.abs(x.n * x.rpb - cap) < 1e-9)[0];
+      if (!bn || bn.n <= 1) return null;
+      const c2 = Math.min.apply(null, stages.map((x) => (x === bn ? x.n - 1 : x.n) * x.rpb));
+      return { n: bn.n - 1, cap: c2 };
+    }
 
     const rows = [...map.values()].map((r) => {
       const b = BU[r.de] || {};
@@ -392,6 +400,12 @@
       ['规划总占地', Math.round(t.planArea) + ' 格'],
     ].map((x) => '<div class="psum"><b>' + x[1] + '</b><span>' + x[0] + '</span></div>').join('') + '</div>';
 
+    h += '<p class="plan-note plan-summary"><b>大概这么建</b>：' + t.buildings + ' 座生产建筑' +
+      (t.houses ? '、' + t.houses + ' 栋住宅（' + fmt(t.pop, 0) + ' 人）' : '') +
+      '，共占 ' + Math.round(t.planArea) + ' 格；每分钟约产出 ' +
+      plan.targets.map((x) => esc(x.chain.good_zh) + ' <b>' + Math.round(x.actual) + '</b>').join(' + ') +
+      '，维护费约 ' + fmt(t.denari, 0) + ' 第纳里/分。</p>';
+
     if (state.areaLimit > 0) {
       const over = t.planArea / state.areaLimit;
       h += over > 1
@@ -402,16 +416,25 @@
     /* 产品明细 */
     h += '<section class="plan-sec"><h3>一、产品与产能</h3><table class="ptab"><thead><tr>' +
       '<th>产品</th><th class="r">目标/分</th><th class="r">实际/分</th><th class="r">相差</th><th class="r">建筑数</th><th>说明</th></tr></thead><tbody>';
+    const refs = [];
     plan.targets.forEach((x) => {
-      const diff = x.actual - x.rate;
       const nb = x.stages.reduce((s, st) => s + st.n, 0);
+      const act = Math.round(x.actual);
+      const actTxt = Math.abs(x.actual - act) < 0.05 ? String(act) : '≈' + act;
+      const diff = act - x.rate;
+      // 凑整参考：少建 1 座瓶颈段后的产量
+      const altTxt = x.alt ? '；瓶颈段少 1 座约 ' + Math.round(x.alt.cap) + '/分' : '';
+      refs.push('<b>' + esc(x.chain.good_zh) + '</b> ' + nb + ' 座 ≈ <b>' + act + '</b>/分' +
+        '（精确 ' + fmt(x.actual, 1) + altTxt + '）');
       h += '<tr><td><b>' + esc(x.chain.good_zh) + '</b> <em>' + esc(x.chain.tier_zh) + '</em></td>' +
-        '<td class="r">' + fmt(x.rate, 0) + '</td><td class="r"><b class="ok">' + fmt(x.actual, 1) + '</b></td>' +
-        '<td class="r">' + (diff >= 0 ? '+' : '') + fmt(diff, 1) + '</td>' +
+        '<td class="r">' + fmt(x.rate, 0) + '</td>' +
+        '<td class="r"><b class="ok" title="精确 ' + fmt(x.actual, 2) + '/分">' + actTxt + '</b></td>' +
+        '<td class="r">' + (diff >= 0 ? '+' : '') + diff + '</td>' +
         '<td class="r">' + nb + '</td>' +
         '<td class="muted">' + x.stages.length + ' 段</td></tr>';
     });
-    h += '</tbody></table><p class="plan-note">每段产线按“每周期消耗 1 吨输入、产出 1 吨成品”计算；取整后上游会略有过剩，实际/分 为瓶颈段产能。</p></section>';
+    h += '</tbody></table>' +
+      '<p class="plan-note">产量按整数显示，方便心算。<b>凑整参考</b>：' + refs.join(' · ') + '。取整时上游会略有过剩，实际/分 为瓶颈段产能。</p></section>';
 
     /* 建筑清单 */
     h += '<section class="plan-sec"><h3>二、要建多少 · 每栋产出与人力</h3><div class="ptab-wrap"><table class="ptab ptab-b"><thead><tr>' +

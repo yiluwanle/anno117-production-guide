@@ -235,6 +235,8 @@ main{max-width:1180px;margin:0 auto;padding:24px}
   padding:14px 18px;border-bottom:1px solid var(--line);
   background:rgba(246,242,234,.45);
 }
+.flow-chip{font-size:11px;color:var(--terra);background:var(--terra-soft);
+  border:1px solid rgba(169,67,42,.18);border-radius:20px;padding:3px 10px;white-space:nowrap}
 .node{
   display:inline-flex;align-items:center;gap:6px;
   font-size:12px;padding:4px 9px;border-radius:7px;
@@ -807,6 +809,9 @@ body.cm-open{overflow:hidden}
 }
 .cchip b{color:var(--terra)}
 .plan-note{margin:8px 0 0;font-size:11.5px;color:var(--muted);line-height:1.65}
+.plan-summary{margin:12px 0 2px;padding:10px 13px;font-size:12.5px;line-height:1.7;color:var(--ink-2);
+  background:var(--bg-2);border-left:3px solid var(--terra);border-radius:0 9px 9px 0}
+.plan-summary b{color:var(--ink)}
 .plan-svg-wrap{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;overflow:auto}
 .plan-svg{width:100%;height:auto;display:block;min-width:320px}
 .plan-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:11.5px;color:var(--muted)}
