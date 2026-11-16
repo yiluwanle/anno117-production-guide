@@ -6,6 +6,7 @@
   const REGIONS = D.regions;
   const CHAINS = D.chains;
   const G = D.goods || {};
+  const GI = D.goods_img || {};
 
   const state = { region: 'all', mode: 'tech', q: '', n: 1, global: 0, tiers: new Set() };
 
@@ -85,6 +86,12 @@
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   const MODE_ZH = { none: '无加成', fac: '满设施', tech: '满科技' };
+
+  /* ---------------- 图片 ---------------- */
+  const goodImg = (en) => GI[en] || '';
+  const imgTag = (src, cls, alt) => (src
+    ? '<img class="' + cls + '" src="' + esc(src) + '" alt="' + esc(alt || '') + '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">'
+    : '');
 
   /* ---------------- 顶部统计 ---------------- */
   const totalBuildings = Object.keys(D.buildings).length;
@@ -168,9 +175,9 @@
     rows.forEach((r) => {
       const s = r.s;
       const missing = (s.inputs || []).filter((g) => !made.has(g));
-      missing.forEach((g) => tokens.push({ t: 'g', v: gname(g) }));
+      missing.forEach((g) => tokens.push({ t: 'g', en: g, v: gname(g) }));
       tokens.push({ t: 'b', zh: s.zh, en: s.en, n: r.count, coal: (s.flags || []).includes('coal') });
-      (s.outputs || []).forEach((g) => { made.add(g); tokens.push({ t: 'g', v: gname(g), out: true }); });
+      (s.outputs || []).forEach((g) => { made.add(g); tokens.push({ t: 'g', en: g, v: gname(g), out: true }); });
     });
     // 去掉紧邻重复的商品
     const clean = [];
@@ -181,7 +188,7 @@
     });
     return '<div class="flow">' + clean.map((tk, i) => {
       const piece = tk.t === 'g'
-        ? '<span class="node good">' + esc(tk.v) + '</span>'
+        ? '<span class="node good" title="' + esc(tk.en) + '">' + imgTag(goodImg(tk.en), 'ic', tk.v) + esc(tk.v) + '</span>'
         : '<span class="node bld" title="' + esc(tk.en) + '">' + esc(tk.zh) + ' <b>×' + fmt(tk.n) + '</b></span>';
       return (i ? '<span class="arrow">›</span>' : '') + piece;
     }).join('') + '</div>';
@@ -244,18 +251,20 @@
   }
 
   function recipeHTML(chain, rows) {
+    const chip = (g) => '<span class="gchip">' + imgTag(goodImg(g), 'gi', gname(g)) + esc(gname(g)) + '</span>';
     const items = rows.map((r) => {
       const s = r.s;
-      const ins = (s.inputs || []).map(gname).join(' + ') || '无（原料）';
-      const outs = (s.outputs || []).map(gname).join(' + ') || '—';
+      const ins = (s.inputs || []).length ? s.inputs.map(chip).join('<i class="plus">+</i>') : '<span class="gchip raw">野外采集</span>';
+      const outs = (s.outputs || []).length ? s.outputs.map(chip).join('<i class="plus">+</i>') : '—';
       const bonusParts = [];
       if (s.bonus.aqua) bonusParts.push('水源×1.5');
       if (s.bonus.silo) bonusParts.push('筒仓+100');
       if (s.bonus.taube) bonusParts.push('鸽舍+50');
       if (s.bonus.research) bonusParts.push('研究+' + s.bonus.research);
       if (s.bonus.religion) bonusParts.push('宗教最高+' + s.bonus.religion + '（守护神，可选）');
-      return '<li><span><b>' + esc(s.zh) + '</b><em style="font-style:normal;color:#867a6a;font-size:11px"> ' + esc(s.en) + '</em> ' +
-        esc(ins) + ' → ' + esc(outs) + '</span>' +
+      return '<li>' + imgTag(s.img, 'rthumb', s.zh) +
+        '<span class="rmain"><span class="rname"><b>' + esc(s.zh) + '</b><em> ' + esc(s.en) + '</em></span>' +
+        '<span class="rio">' + ins + '<i class="arr">→</i>' + outs + '</span></span>' +
         '<span class="rl-time">' + mmss(s.time) + ' · 生产力 ' + Math.round(r.p) + '% · 产出 ' + r.out.toFixed(2) + '/分</span>' +
         '<span class="bonus-line">可用加成：' + (bonusParts.length ? bonusParts.join(' · ') : '无') + '</span></li>';
     }).join('');
@@ -280,7 +289,8 @@
         ? '<span class="delta flat">—</span>'
         : '<span class="delta ' + (d < 0 ? 'down' : 'flat') + '">' + (d > 0 ? '+' : '') + Math.round(d) + '%</span>';
       return '<tr>' +
-        '<td><span class="bname">' + esc(r.s.zh) + '<em>' + esc(r.s.en) + '</em></span>' + facilityIcons(r.s.bonus) + '</td>' +
+        '<td><span class="bname">' + imgTag(r.s.img, 'bthumb', r.s.zh) +
+          '<span class="btext">' + esc(r.s.zh) + '<em>' + esc(r.s.en) + '</em></span>' + facilityIcons(r.s.bonus) + '</span></td>' +
         '<td>' + mmss(r.s.time) + '</td>' +
         '<td class="c-yield">' + r.out.toFixed(2) + '</td>' +
         '<td class="c-none">' + fmt(n0) + '</td>' +
@@ -293,7 +303,7 @@
 
     return '<article class="chain" data-id="' + chain.id + '">' +
       '<div class="chain-head">' +
-        '<div class="glyph">' + esc(chain.good_zh.slice(0, 1)) + '</div>' +
+        '<div class="glyph">' + (chain.icon ? imgTag(chain.icon, 'gimg', chain.good_zh) : esc(chain.good_zh.slice(0, 1))) + '</div>' +
         '<div>' +
           '<h3>' + esc(chain.good_zh) + '<span class="latin">' + esc(chain.good_de) + ' · ' + esc(chain.good_en) + '</span></h3>' +
           '<div class="tags">' +

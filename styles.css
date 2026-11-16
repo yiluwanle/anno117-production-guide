@@ -196,12 +196,13 @@ main{max-width:1180px;margin:0 auto;padding:24px}
   background:linear-gradient(180deg,rgba(250,246,238,.9),rgba(255,253,249,0));
 }
 .glyph{
-  flex:0 0 auto;width:42px;height:42px;border-radius:10px;
-  display:grid;place-items:center;
+  flex:0 0 auto;width:46px;height:46px;border-radius:11px;
+  display:grid;place-items:center;overflow:hidden;
   font-family:"Songti SC","Noto Serif SC",serif;font-size:19px;font-weight:700;
   background:var(--terra-soft);color:var(--terra);
   border:1px solid #eddbd2;
 }
+.glyph img{width:100%;height:100%;object-fit:contain;display:block}
 .chain-head h3{
   margin:0;font-size:16.5px;font-weight:700;letter-spacing:.01em;
   font-family:"Songti SC","Noto Serif SC",serif;
@@ -243,6 +244,7 @@ main{max-width:1180px;margin:0 auto;padding:24px}
 .node.good{font-weight:600;color:var(--ink)}
 .node.bld{background:#fbf4ef;border-color:#eedfd5;color:#8c3f26;font-weight:600}
 .node b{font-variant-numeric:tabular-nums;font-weight:700}
+.node .ic{width:17px;height:17px;object-fit:contain;display:block;flex:0 0 auto}
 .arrow{color:var(--line-2);font-size:13px;line-height:1}
 
 /* table */
@@ -261,7 +263,12 @@ tbody td{padding:8px 10px;border-bottom:1px solid #f0e9db;text-align:right;font-
 tbody td:first-child{text-align:left;padding-left:18px;font-variant-numeric:normal}
 tbody tr:last-child td{border-bottom:0}
 tbody tr:hover{background:rgba(246,242,234,.55)}
-.bname{font-weight:600}
+.bname{font-weight:600;display:flex;align-items:center;gap:8px;min-width:0}
+.bname .btext{min-width:0}
+.bname .bthumb{
+  width:26px;height:26px;object-fit:contain;flex:0 0 auto;display:block;
+  background:#fffdf9;border:1px solid var(--line);border-radius:6px;padding:1px;
+}
 .bname em{
   font-style:normal;font-size:11px;color:var(--muted);margin-left:6px;font-weight:400;
   font-family:"Times New Roman",Georgia,serif;letter-spacing:.03em;
@@ -306,6 +313,24 @@ details.recipe[open] summary::after{transform:rotate(180deg)}
   font-size:12.5px;color:var(--ink-2);background:var(--bg-2);border-radius:8px;padding:9px 11px;
   display:flex;flex-wrap:wrap;gap:6px;align-items:center;
 }
+.rthumb{
+  width:38px;height:38px;object-fit:contain;flex:0 0 auto;display:block;
+  background:#fffdf9;border:1px solid var(--line);border-radius:7px;padding:2px;
+}
+.rmain{display:flex;flex-direction:column;gap:4px;min-width:0}
+.rname b{font-weight:700;color:var(--ink)}
+.rname em{
+  font-style:normal;font-size:11px;color:var(--muted);
+  font-family:"Times New Roman",Georgia,serif;letter-spacing:.03em;
+}
+.rio{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.gchip{
+  display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--ink-2);
+  background:#fffdf9;border:1px solid var(--line);border-radius:5px;padding:1px 6px 1px 3px;
+}
+.gchip.raw{color:var(--muted);padding-left:6px;font-style:normal}
+.gchip .gi{width:15px;height:15px;object-fit:contain;display:block;flex:0 0 auto}
+.plus,.arr{color:var(--line-2);font-style:normal;font-size:11px}
 .recipe-list .rl-time{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--muted);font-size:11.5px}
 .bonus-line{font-size:11.5px;color:var(--muted);width:100%;margin-top:2px}
 
